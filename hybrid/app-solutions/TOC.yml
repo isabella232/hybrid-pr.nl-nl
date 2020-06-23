@@ -1,0 +1,74 @@
+- name: Documentatie over Azure Hybrid
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Voorbeelden van hybride patronen en oplossingen
+      href: overview-patterns-solution-examples.md
+- name: Patronen
+  items:
+    - name: Enkelvoudig
+      items:
+        - name: Schalen door de cloud
+          href: pattern-cross-cloud-scale.md
+        - name: Hybride CI/CD in DevOps
+          href: pattern-cicd-pipeline.md
+        - name: Geografisch verdeelde app
+          href: pattern-geo-distributed.md
+        - name: Hybride relay
+          href: pattern-hybrid-relay.md
+        - name: Gelaagde gegevens
+          href: pattern-tiered-data-analytics.md
+        - name: ML-model in de rand trainen
+          href: pattern-train-ml-model-at-edge.md
+    - name: Meerdere
+      items:
+        - name: Schalen in meerdere clouds (on-premises gegevens)
+          href: pattern-cross-cloud-scale-onprem-data.md
+        - name: Footfall-detectie (retail)
+          href: pattern-retail-footfall-detection.md
+        - name: Out-of-stock-detectie aan de rand
+          href: pattern-out-of-stock-at-edge.md
+- name: Implementatiegidsen voor oplossingen
+  items:
+    - name: Schalen door de cloud
+      href: solution-deployment-guide-cross-cloud-scaling.md
+    - name: Schalen in meerdere clouds (on-premises gegevens)
+      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+    - name: Hybride CI/CD in DevOps
+      href: 'https://aka.ms/hybriddevopsdeploy'
+    - name: Footfall-detectie (retail)
+      href: solution-deployment-guide-retail-footfall-detection.md
+    - name: Geografisch verdeelde app
+      href: solution-deployment-guide-geo-distributed.md
+    - name: Hybride connectiviteit
+      href: solution-deployment-guide-connectivity.md
+    - name: Hybride identiteit
+      href: solution-deployment-guide-identity.md
+    - name: Hybride relay
+      href: 'https://aka.ms/hybridrelaydeployment'
+    - name: Gelaagde gegevens
+      href: 'https://aka.ms/tiereddatadeploy'
+    - name: Hoge beschikbaarheid in MongoDB
+      href: solution-deployment-guide-mongodb-ha.md
+    - name: Hoge beschikbaarheid in SQL Server 2016
+      href: solution-deployment-guide-sql-ha.md
+    - name: Out-of-stock aan de rand
+      href: 'https://aka.ms/edgeinferencingdeploy'
+    - name: ML-modellen trainen aan de rand
+      href: 'https://aka.ms/edgetrainingdeploy'
+- name: Concepten
+  items:
+    - name: Overwegingen bij het ontwerp van hybride apps
+      href: overview-app-design-considerations.md
+- name: Verwant
+  items:
+    - name: Azure-documentatie
+      href: /azure
+    - name: Documentatie over Azure Stack
+      href: /azure-stack
+- name: Resources
+  items:
+    - name: Microsoft Learn
+      href: /learn
+    - name: Microsoft Q&A
+      href: /answers/products/

@@ -1,0 +1,72 @@
+### YamlMime:Landing
+title: Documentatie voor hybride Azure-patronen en -oplossingen
+summary: Meer informatie over hoe u voorbeelden van hybride patronen en oplossingen in uw app-ontwikkeling gebruikt. Azure en Azure Stack maken de ontwikkeling mogelijk van hybride toepassingen die zijn gebouwd in een suite intelligente cloud- en intelligent edge-services.
+metadata:
+  title: Documentatie voor hybride Azure-patronen en -oplossingen
+  description: Meer informatie over hoe u voorbeelden van hybride patronen en oplossingen in uw app-ontwikkeling gebruikt. Azure en Azure Stack maken de ontwikkeling mogelijk van hybride toepassingen die zijn gebouwd in een suite intelligente cloud- en intelligent edge-services.
+  ms.service: azure-stack
+  ms.topic: landing-page
+  author: BryanLa
+  ms.author: bryanla
+  ms.date: 10/31/2019
+  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
+  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.translationtype: HT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84909660"
+landingContent:
+- title: Over hybride patronen en oplossingen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat zijn voorbeelden van hybride patronen en oplossingen?
+      url: overview-patterns-solution-examples.md
+  - linkListType: concept
+    links:
+    - text: Overwegingen bij het ontwerp van hybride apps
+      url: overview-app-design-considerations.md
+- title: Hybride patronen ontdekken
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Schalen door de cloud
+      url: pattern-cross-cloud-scale.md
+    - text: Hybride CI/CD in DevOps
+      url: pattern-cicd-pipeline.md
+    - text: Footfall-detectie (retail)
+      url: pattern-retail-footfall-detection.md
+    - text: Geografisch verdeelde app
+      url: pattern-geo-distributed.md
+- title: Voorbeelden van hybride oplossingen implementeren
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Schalen door de cloud
+      url: solution-deployment-guide-cross-cloud-scaling.md
+    - text: Hybride CI/CD in DevOps
+      url: https://aka.ms/hybriddevopsdeploy
+    - text: Footfall-detectie (retail)
+      url: solution-deployment-guide-retail-footfall-detection.md
+    - text: Geografisch verdeelde app
+      url: solution-deployment-guide-geo-distributed.md
+- title: Scenario voor footfall-detectie in de retail
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Patroon
+      url: pattern-retail-footfall-detection.md
+  - linkListType: tutorial
+    links:
+    - text: Implementatiegids voor oplossingen
+      url: solution-deployment-guide-retail-footfall-detection.md
+- title: Scenario voor schalen in meerdere clouds met on-premises gegevens
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Patroon
+      url: pattern-cross-cloud-scale-onprem-data.md
+  - linkListType: tutorial
+    links:
+    - text: Implementatiegids voor oplossingen
+      url: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
