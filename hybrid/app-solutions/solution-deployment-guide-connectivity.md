@@ -39,7 +39,7 @@ Er zijn enkele onderdelen vereist voor het bouwen van een hybride connectiviteit
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 - Een [Web-app](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) maken in Azure. Noteer de URL van de web-app, omdat u deze nodig hebt in de oplossing.
 
-### <a name="azure-stack-hub"></a>Azure Stack hub
+### <a name="azure-stack-hub"></a>Azure Stack Hub
 
 Een Azure OEM/Hardware-partner kan een productie Azure Stack hub implementeren en alle gebruikers kunnen een Azure Stack Development Kit (ASDK) implementeren.
 
@@ -84,7 +84,7 @@ Verbindings specificaties:
 
 IP-adressen van netwerk en subnet:
 
-| Azure/Azure Stack hub-verbinding | Naam | Subnet | IP-adres |
+| Azure/Azure Stack hub-verbinding | Name | Subnet | IP-adres |
 |---|---|---|---|
 | Azure vNet | ApplicationvNet<br>10.100.102.9/23 | ApplicationSubnet<br>10.100.102.0/24 |  |
 |  |  | GatewaySubnet<br>10.100.103.0/24 |  |

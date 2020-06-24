@@ -64,7 +64,7 @@ Zorg ervoor dat lokaal geïmplementeerde apps zijn geconfigureerd voor hoge Besc
 
 De oplossing voor meerdere clouds zorgt voor naadloos beheer en de vertrouwde interface tussen omgevingen. Power shell wordt aanbevolen voor beheer op meerdere platforms.
 
-## <a name="cross-cloud-scaling"></a>Cross-Cloud schalen
+## <a name="cross-cloud-scaling"></a>Schalen door de cloud
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Een aangepast domein ophalen en DNS configureren
 
