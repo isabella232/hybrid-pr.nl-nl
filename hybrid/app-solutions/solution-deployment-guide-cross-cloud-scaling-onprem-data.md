@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 75289eae902c5363862e345bdedb97cbcee0476e
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910324"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477317"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Implementeer hybride app met on-premises gegevens die meerdere clouds schalen
 
@@ -131,7 +131,7 @@ De Azure App Service vereenvoudigt het uitvoeren en beheren van een web-app. Omd
 
 ### <a name="create-web-apps"></a>Web-apps maken
 
-1. Maak een web-app in azure door de instructies te volgen in [een app service-abonnement beheren in azure](https://docs.microsoft.com/azure/app-service/app-service-plan-manage#create-an-app-service-plan). Zorg ervoor dat u de web-app in hetzelfde abonnement en dezelfde resource groep plaatst als uw hybride netwerk.
+1. Maak een web-app in azure door de instructies te volgen in [een app service-abonnement beheren in azure](/azure/app-service/app-service-plan-manage#create-an-app-service-plan). Zorg ervoor dat u de web-app in hetzelfde abonnement en dezelfde resource groep plaatst als uw hybride netwerk.
 
 2. Herhaal de vorige stap (1) in Azure Stack hub.
 
@@ -172,7 +172,7 @@ De virtuele netwerk gateway aan de Azure-kant van het hybride netwerk moet punt-
 
 ### <a name="integrate-the-azure-app-service-app-with-the-hybrid-network"></a>De Azure App Service-app integreren met het hybride netwerk
 
-1. Als u de app wilt verbinden met Azure VNet, volgt u de instructies in de [Gateway vereiste VNet-integratie](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
+1. Als u de app wilt verbinden met Azure VNet, volgt u de instructies in de [Gateway vereiste VNet-integratie](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
 
 2. Ga naar **instellingen** voor het app service plan dat als host fungeert voor de web-app. Selecteer in **instellingen**de optie **netwerken**.
 
@@ -186,13 +186,13 @@ De virtuele netwerk gateway aan de Azure-kant van het hybride netwerk moet punt-
 
     ![IP-adresbereiken voor route ring in Virtual Network integratie](media/solution-deployment-guide-hybrid/image13.png)
 
-Zie [uw app integreren met een Azure-Virtual Network](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet)voor meer informatie over de manier waarop app service integreert met Azure VNets.
+Zie [uw app integreren met een Azure-Virtual Network](/azure/app-service/web-sites-integrate-with-vnet)voor meer informatie over de manier waarop app service integreert met Azure VNets.
 
 ### <a name="configure-the-azure-stack-hub-virtual-network"></a>Het virtuele netwerk van de Azure Stack hub configureren
 
 De lokale netwerk gateway in het virtuele netwerk Azure Stack hub moet worden geconfigureerd om verkeer te routeren vanuit het App Service punt-naar-site-adres bereik.
 
-1. Ga in Azure Stack hub naar de **lokale netwerk gateway**. Selecteer bij **Instellingen** de optie **Configuratie**.
+1. Ga in Azure Stack hub naar de **lokale netwerk gateway**. Selecteer onder **Instellingen** de optie **Configuratie**.
 
     ![De optie gateway configuratie in de lokale netwerk gateway van Azure Stack hub](media/solution-deployment-guide-hybrid/image14.png)
 
@@ -210,7 +210,7 @@ In deze zelf studie wordt gebruikgemaakt van Azure DNS om de DNS te beheren, omd
 
 ### <a name="create-subdomains"></a>Subdomeinen maken
 
-Omdat Traffic Manager afhankelijk is van DNS-CNAME, is er een subdomein nodig om verkeer naar eind punten goed te routeren. Zie voor meer informatie over DNS-records en domein toewijzing [domeinen toewijzen met Traffic Manager](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager-custom-domain-name).
+Omdat Traffic Manager afhankelijk is van DNS-CNAME, is er een subdomein nodig om verkeer naar eind punten goed te routeren. Zie voor meer informatie over DNS-records en domein toewijzing [domeinen toewijzen met Traffic Manager](/azure/app-service/web-sites-traffic-manager-custom-domain-name).
 
 Voor het Azure-eind punt maakt u een subdomein waarmee gebruikers toegang kunnen krijgen tot uw web-app. Voor deze zelf studie kunt u **app.Northwind.com**gebruiken, maar u moet deze waarde aanpassen op basis van uw eigen domein.
 
@@ -218,13 +218,13 @@ U moet ook een subdomein met een record maken voor het eind punt van de Azure St
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Een aangepast domein configureren in azure
 
-1. Voeg de **app.Northwind.com** hostname toe aan de Azure-web-app door [een CNAME toe te wijzen aan Azure app service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
+1. Voeg de **app.Northwind.com** hostname toe aan de Azure-web-app door [een CNAME toe te wijzen aan Azure app service](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
 
 ### <a name="configure-custom-domains-in-azure-stack-hub"></a>Aangepaste domeinen configureren in Azure Stack hub
 
-1. Voeg de **azurestack.Northwind.com** -hostnaam toe aan de Web-App van de Azure stack hub door een [A-record aan Azure app service toe te wijzen](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Gebruik het IP-adres van Internet Routeer voor de App Service-app.
+1. Voeg de **azurestack.Northwind.com** -hostnaam toe aan de Web-App van de Azure stack hub door een [A-record aan Azure app service toe te wijzen](/azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Gebruik het IP-adres van Internet Routeer voor de App Service-app.
 
-2. Voeg de **app.Northwind.com** -hostnaam toe aan de web-app Azure stack hub door [een CNAME toe te wijzen aan Azure app service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Gebruik de hostnaam die u in de vorige stap (1) hebt geconfigureerd als doel voor de CNAME.
+2. Voeg de **app.Northwind.com** -hostnaam toe aan de web-app Azure stack hub door [een CNAME toe te wijzen aan Azure app service](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Gebruik de hostnaam die u in de vorige stap (1) hebt geconfigureerd als doel voor de CNAME.
 
 ## <a name="configure-ssl-certificates-for-cross-cloud-scaling"></a>SSL-certificaten configureren voor cross-Cloud schalen
 
@@ -238,9 +238,9 @@ SSL toevoegen aan Azure:
 
 1. Controleer of het SSL-certificaat dat u hebt ontvangen, geldig is voor het subdomein dat u hebt gemaakt. (U kunt Joker certificaten gebruiken.)
 
-2. Volg in azure de instructies in de **Web-app voorbereiden** en **BIND uw SSL-certificaat** in de secties [een bestaand aangepast SSL-certificaat binden aan Azure web apps](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) . Selecteer **SSL op basis van SNI** als het **SSL-type**.
+2. Volg in azure de instructies in de **Web-app voorbereiden** en **BIND uw SSL-certificaat** in de secties [een bestaand aangepast SSL-certificaat binden aan Azure web apps](/azure/app-service/app-service-web-tutorial-custom-ssl) . Selecteer **SSL op basis van SNI** als het **SSL-type**.
 
-3. Alle verkeer omleiden naar de HTTPS-poort. Volg de instructies in de sectie **https afdwingen** van het artikel [een bestaand aangepast SSL-certificaat binden aan Azure web apps](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) .
+3. Alle verkeer omleiden naar de HTTPS-poort. Volg de instructies in de sectie **https afdwingen** van het artikel [een bestaand aangepast SSL-certificaat binden aan Azure web apps](/azure/app-service/app-service-web-tutorial-custom-ssl) .
 
 SSL toevoegen aan Azure Stack hub:
 
@@ -248,13 +248,13 @@ SSL toevoegen aan Azure Stack hub:
 
 ## <a name="configure-and-deploy-the-web-app"></a>De web-app configureren en implementeren
 
-U configureert de app-code om telemetrie te rapporteren aan het juiste Application Insights-exemplaar en de web-apps te configureren met de juiste verbindings reeksen. Zie [Wat is Application Insights?](https://docs.microsoft.com/azure/application-insights/app-insights-overview) voor meer informatie over Application Insights.
+U configureert de app-code om telemetrie te rapporteren aan het juiste Application Insights-exemplaar en de web-apps te configureren met de juiste verbindings reeksen. Zie [Wat is Application Insights?](/azure/application-insights/app-insights-overview) voor meer informatie over Application Insights.
 
 ### <a name="add-application-insights"></a>Application Insights toevoegen
 
 1. Open uw web-app in micro soft Visual Studio.
 
-2. [Voeg Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) toe aan uw project voor het verzenden van de telemetrie die Application Insights gebruikt om waarschuwingen te maken wanneer webverkeer toeneemt of afneemt.
+2. [Voeg Application Insights](/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) toe aan uw project voor het verzenden van de telemetrie die Application Insights gebruikt om waarschuwingen te maken wanneer webverkeer toeneemt of afneemt.
 
 ### <a name="configure-dynamic-connection-strings"></a>Dynamische verbindings reeksen configureren
 
@@ -287,7 +287,7 @@ U kunt App Service omgevings variabelen gebruiken om een andere connection strin
 
 1. Maak verbindings reeksen voor Azure en Azure Stack hub. De teken reeksen moeten hetzelfde zijn, met uitzonde ring van de IP-adressen die worden gebruikt.
 
-2. Voeg in Azure en Azure Stack hub de juiste connection string toe [als een app-instelling](https://docs.microsoft.com/azure/app-service/web-sites-configure) in de web-app, met `SQLCONNSTR\_` als voor voegsel in de naam.
+2. Voeg in Azure en Azure Stack hub de juiste connection string toe [als een app-instelling](/azure/app-service/web-sites-configure) in de web-app, met `SQLCONNSTR\_` als voor voegsel in de naam.
 
 3. **Sla** de web-app-instellingen op en start de app opnieuw.
 
@@ -543,4 +543,4 @@ Gebruik de volgende stappen als richt lijn voor het configureren van automatisch
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Cloud ontwerp patronen](https://docs.microsoft.com/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.
+- Zie [Cloud ontwerp patronen](/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 740a8c0ec904fe8eb3f9744626bc9dd6655bdb52
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910636"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477334"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Een app implementeren waarmee u meerdere clouds schaalt met behulp van Azure en Azure Stack hub
 
@@ -68,7 +68,7 @@ De oplossing voor meerdere clouds zorgt voor naadloos beheer en de vertrouwde in
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Een aangepast domein ophalen en DNS configureren
 
-Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom van de aangepaste domein naam. Gebruik [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) voor Azure/Office 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een ander DNS-REGI ster](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom van de aangepaste domein naam. Gebruik [Azure DNS](/azure/dns/dns-getstarted-portal) voor Azure/Office 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een ander DNS-REGI ster](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Een aangepast domein registreren bij een openbaar registratie service.
 2. Meld u aan bij de domeinnaamregistrar voor het domein. Een goedgekeurde beheerder kan verplicht zijn om DNS-updates uit te voeren.
@@ -97,7 +97,7 @@ Azure-opslagplaatsen
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Zelf-opgenomen web-app-implementatie maken voor App Services in beide Clouds
 
-1. Bewerk het bestand **webapplication. csproj** . Selecteren `Runtimeidentifier` en toevoegen `win10-x64` . (Zie [zelf-opgenomen implementatie](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) documentatie.)
+1. Bewerk het bestand **webapplication. csproj** . Selecteren `Runtimeidentifier` en toevoegen `win10-x64` . (Zie [zelf-opgenomen implementatie](/dotnet/core/deploying/deploy-with-vs#simpleSelf) documentatie.)
 
     ![Web-app-project bestand bewerken](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
@@ -113,7 +113,7 @@ Azure-opslagplaatsen
 
     ![Code toevoegen aan de web-app](media/solution-deployment-guide-cross-cloud-scaling/image4.png)
 
-3. Voer de build uit. In het [zelf opgenomen implementatie](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) proces worden artefacten gepubliceerd die worden uitgevoerd op Azure en Azure stack hub.
+3. Voer de build uit. In het [zelf opgenomen implementatie](/dotnet/core/deploying/deploy-with-vs#simpleSelf) proces worden artefacten gepubliceerd die worden uitgevoerd op Azure en Azure stack hub.
 
 ## <a name="use-an-azure-hosted-agent"></a>Een gehoste agent van Azure gebruiken
 
@@ -211,7 +211,7 @@ Azure-pijp lijnen en Azure DevOps services bieden een zeer Configureer bare en b
 21. Sla alle wijzigingen op.
 
 > [!Note]  
-> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
+> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publiceren naar Azure Stack hub via Visual Studio
 
@@ -254,7 +254,7 @@ Gebruik [Azure Resource Manager sjablonen](https://azure.microsoft.com/resources
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Zelf-opgenomen web-app-implementatie maken voor App Services in beide Clouds
 
-1. Bewerk het bestand **webapplication. csproj** : Selecteer `Runtimeidentifier` en vervolgens toevoegen `win10-x64` . Zie voor meer informatie de documentatie over de [zelfstandige implementatie](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) .
+1. Bewerk het bestand **webapplication. csproj** : Selecteer `Runtimeidentifier` en vervolgens toevoegen `win10-x64` . Zie voor meer informatie de documentatie over de [zelfstandige implementatie](/dotnet/core/deploying/deploy-with-vs#simpleSelf) .
 
 2. Gebruik team Explorer om de code in azure opslag plaatsen te controleren.
 
@@ -268,7 +268,7 @@ Gebruik [Azure Resource Manager sjablonen](https://azure.microsoft.com/resources
 
 3. In **argumenten**, add **-r win10-x64-** code. Deze toevoeging is vereist voor het activeren van een zelfstandige implementatie met .NET core.
 
-4. Voer de build uit. In het [zelf opgenomen implementatie constructie](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) proces worden artefacten gepubliceerd die kunnen worden uitgevoerd op Azure en Azure stack hub.
+4. Voer de build uit. In het [zelf opgenomen implementatie constructie](/dotnet/core/deploying/deploy-with-vs#simpleSelf) proces worden artefacten gepubliceerd die kunnen worden uitgevoerd op Azure en Azure stack hub.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Een door Azure gehoste build-agent gebruiken
 
@@ -329,7 +329,7 @@ Het maken van een release definitie is de laatste stap in het app-bouw proces. D
 23. Sla alle wijzigingen op.
 
 > [!Note]  
-> Sommige instellingen voor release taken worden automatisch gedefinieerd als [omgevings variabelen](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen, maar kunnen worden gewijzigd in de bovenliggende omgevings items.
+> Sommige instellingen voor release taken worden automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen, maar kunnen worden gewijzigd in de bovenliggende omgevings items.
 
 ## <a name="create-a-release"></a>Een release maken
 
@@ -361,4 +361,4 @@ Een flexibele en robuuste multi-Cloud service biedt gegevens beveiliging, back-u
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Cloud ontwerp patronen](https://docs.microsoft.com/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.
+- Zie [Cloud ontwerp patronen](/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.

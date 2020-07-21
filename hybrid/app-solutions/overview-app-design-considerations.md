@@ -7,20 +7,20 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4fd52f76baad8059e130adfc01cdd0152b40a510
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910420"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477215"
 ---
-# <a name="hybrid-app-design-considerations"></a>Overwegingen voor het ontwerpen van hybride apps
+# <a name="hybrid-app-design-considerations"></a>Overwegingen bij het ontwerp van hybride apps
 
 Microsoft Azure is de enige consistente hybride Cloud. Zo kunt u uw ontwikkelings investeringen hergebruiken en apps inschakelen die wereld wijd Azure, de soevereine Azure-Clouds en Azure Stack, een uitbrei ding van Azure in uw Data Center. Apps die Clouds omvatten, worden ook *hybrid apps*genoemd.
 
-In de [*hand leiding Azure-toepassing architectuur*](https://docs.microsoft.com/azure/architecture/guide) wordt een gestructureerde benadering beschreven voor het ontwerpen van apps die schaalbaar, robuust en Maxi maal beschikbaar zijn. De overwegingen die in de [*Azure-toepassing architectuur handleiding*](https://docs.microsoft.com/azure/architecture/guide) zijn beschreven, zijn gelijk van toepassing op apps die zijn ontworpen voor één Cloud en voor apps die Clouds omvatten.
+In de [*hand leiding Azure-toepassing architectuur*](/azure/architecture/guide) wordt een gestructureerde benadering beschreven voor het ontwerpen van apps die schaalbaar, robuust en Maxi maal beschikbaar zijn. De overwegingen die in de [*Azure-toepassing architectuur handleiding*](/azure/architecture/guide) zijn beschreven, zijn gelijk van toepassing op apps die zijn ontworpen voor één Cloud en voor apps die Clouds omvatten.
 
-In dit artikel worden de [*pijlers van de software kwaliteit*](https://docs.microsoft.com/azure/architecture/guide/pillars) beschreven die worden besproken in de [*Azure-toepassing*](https://docs.microsoft.com/azure/architecture/guide/) [ *Architecture-hand leiding*,](https://docs.microsoft.com/azure/architecture/guide/) die specifiek gericht is op het ontwerpen van hybride apps. Daarnaast voegen we een *placement* -pijler toe als hybride apps niet exclusief voor één Cloud of een on-premises Data Center.
+In dit artikel worden de [*pijlers van de software kwaliteit*](/azure/architecture/guide/pillars) beschreven die worden besproken in de [*Azure-toepassing*](/azure/architecture/guide/) [ *Architecture-hand leiding*,](/azure/architecture/guide/) die specifiek gericht is op het ontwerpen van hybride apps. Daarnaast voegen we een *placement* -pijler toe als hybride apps niet exclusief voor één Cloud of een on-premises Data Center.
 
 Hybride scenario's variëren aanzienlijk met de resources die beschikbaar zijn voor ontwikkeling en beschik bare overwegingen zoals geografie, beveiliging, Internet toegang en andere overwegingen. Hoewel deze hand leiding uw specifieke overwegingen niet kan inventariseren, kan deze een aantal belang rijke richt lijnen en aanbevolen procedures bieden die u kunt volgen. Het ontwerpen, configureren, implementeren en onderhouden van een hybride app-architectuur omvat veel ontwerp overwegingen die mogelijk niet bekend zijn bij u.
 
@@ -93,7 +93,7 @@ Plaatsing is de belang rijke taak van het plaatsen van onderdelen, zodat deze ee
 
 **Controleer de vereiste locaties.** Zorg ervoor dat de app of een van de bijbehorende onderdelen vereist zijn voor het uitvoeren van of het vereisen van certificering voor een specifieke Cloud. Dit kan betrekking hebben op de soevereiniteit-vereisten van uw bedrijf of door de wet worden gedicteerd. Bepaal ook of een on-premises bewerking is vereist voor een bepaalde locatie of land instelling.
 
-**Connectiviteits afhankelijkheden vaststellen.** De vereiste locaties en andere factoren kunnen de connectiviteits afhankelijkheden van uw onderdelen bepalen. Bepaal bij het plaatsen van de onderdelen de optimale connectiviteit en beveiliging voor communicatie. Dit zijn onder andere [ *VPN-*,](https://docs.microsoft.com/azure/vpn-gateway/) [ *ExpressRoute*](https://docs.microsoft.com/azure/expressroute/) -en [ *hybride verbindingen*.](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
+**Connectiviteits afhankelijkheden vaststellen.** De vereiste locaties en andere factoren kunnen de connectiviteits afhankelijkheden van uw onderdelen bepalen. Bepaal bij het plaatsen van de onderdelen de optimale connectiviteit en beveiliging voor communicatie. Dit zijn onder andere [ *VPN-*,](/azure/vpn-gateway/) [ *ExpressRoute*](/azure/expressroute/) -en [ *hybride verbindingen*.](/azure/app-service/app-service-hybrid-connections)
 
 **Bepaal de platform mogelijkheden.** Voor elk app-onderdeel raadpleegt u of de vereiste resource provider voor het app-onderdeel beschikbaar is in de Cloud en of de band breedte kan voldoen aan de verwachte vereisten voor door Voer en latentie.
 
@@ -109,7 +109,7 @@ Plaatsing is de belang rijke taak van het plaatsen van onderdelen, zodat deze ee
 
 Schaal baarheid is de mogelijkheid van een systeem om een grotere belasting van een app te verwerken. deze kan in de loop van de tijd variëren, omdat andere factoren en krachten de omvang van de doel groep beïnvloeden, naast de grootte en het bereik van de app.
 
-Zie [*schaal baarheid*](https://docs.microsoft.com/azure/architecture/guide/pillars#scalability) in de vijf pijlers van de architectuur uitmuntendheid voor de belangrijkste bespreking van deze pijler.
+Zie [*schaal baarheid*](/azure/architecture/guide/pillars#scalability) in de vijf pijlers van de architectuur uitmuntendheid voor de belangrijkste bespreking van deze pijler.
 
 Met een horizontale schaal benadering voor hybride apps kunt u meer exemplaren toevoegen om aan de vraag te voldoen en ze vervolgens uitschakelen tijdens stilte tijd.
 
@@ -155,7 +155,7 @@ Zie [*Beschik baarheid*](/azure/architecture/framework/) in de vijf pijlers van 
 
 Tolerantie is de mogelijkheid voor een hybride app en een systeem om fouten op te lossen en verder te werken. Het doel van tolerantie is het retour neren van de app naar een volledig functionerende status nadat een fout is opgetreden. Flexibiliteits strategieën zijn oplossingen zoals back-ups, replicatie en nood herstel.
 
-Zie [*tolerantie*](https://docs.microsoft.com/azure/architecture/guide/pillars#resiliency) in de vijf pijlers van de architectuur uitmuntendheid voor de belangrijkste bespreking van deze pijler.
+Zie [*tolerantie*](/azure/architecture/guide/pillars#resiliency) in de vijf pijlers van de architectuur uitmuntendheid voor de belangrijkste bespreking van deze pijler.
 
 ### <a name="resiliency-checklist"></a>Controlelijst voor tolerantie
 
@@ -201,7 +201,7 @@ Bepaal welke onderdelen van de app moeten worden bewaakt.
 
 Beveiliging is een van de belangrijkste aandachtspunten voor elke Cloud-app en wordt nog eens kritiek voor hybride Cloud-apps.
 
-Zie [*beveiliging*](https://docs.microsoft.com/azure/architecture/guide/pillars#security) in de vijf pijlers van de architectuur uitmuntendheid voor de belangrijkste bespreking van deze pijler.
+Zie [*beveiliging*](/azure/architecture/guide/pillars#security) in de vijf pijlers van de architectuur uitmuntendheid voor de belangrijkste bespreking van deze pijler.
 
 ### <a name="security-checklist"></a>Controlelijst voor beveiliging
 
@@ -229,6 +229,6 @@ Het lijkt altijd een tijdrovende taak, maar u kunt uw rendement op uw investerin
 
 Zie de volgende bronnen voor meer informatie:
 
-- [Hybride Cloud](https://azure.microsoft.com/overview/hybrid-cloud/)
+- [Hybride cloud](https://azure.microsoft.com/overview/hybrid-cloud/)
 - [Hybride Cloud-apps](https://azure.microsoft.com/solutions/hybrid-cloud-app/)
 - [Azure Resource Manager-sjablonen voor consistentie van de cloud ontwikkelen](https://aka.ms/consistency)

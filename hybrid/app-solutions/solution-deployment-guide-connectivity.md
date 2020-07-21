@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 0e1a0fc4fb4110fdb406d4b4b2e72abb8f5412c9
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910313"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477283"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Hybride Cloud connectiviteit configureren met Azure en Azure Stack hub
 
@@ -36,8 +36,8 @@ Er zijn enkele onderdelen vereist voor het bouwen van een hybride connectiviteit
 
 ### <a name="azure"></a>Azure
 
-- Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-- Een [Web-app](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) maken in Azure. Noteer de URL van de web-app, omdat u deze nodig hebt in de oplossing.
+- Als u nog geen abonnement voor Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+- Een [Web-app](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) maken in Azure. Noteer de URL van de web-app, omdat u deze nodig hebt in de oplossing.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -69,7 +69,7 @@ Controleer of u aan de volgende criteria voldoet voordat u begint met het config
 
 #### <a name="solution-example-values"></a>Voorbeeld waarden voor oplossingen
 
-Voor de voor beelden in deze oplossing worden de volgende waarden gebruikt. U kunt deze waarden gebruiken om een test omgeving te maken of om een beter inzicht te krijgen in de voor beelden. Zie [over VPN gateway-instellingen](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings)voor meer informatie over instellingen voor VPN-gateway.
+Voor de voor beelden in deze oplossing worden de volgende waarden gebruikt. U kunt deze waarden gebruiken om een test omgeving te maken of om een beter inzicht te krijgen in de voor beelden. Zie [over VPN gateway-instellingen](/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings)voor meer informatie over instellingen voor VPN-gateway.
 
 Verbindings specificaties:
 
@@ -99,7 +99,7 @@ IP-adressen van netwerk en subnet:
 
 ## <a name="create-a-virtual-network-in-global-azure-and-azure-stack-hub"></a>Een virtueel netwerk maken in de wereld wijde Azure-en Azure Stack hub
 
-Gebruik de volgende stappen om een virtueel netwerk te maken met behulp van de portal. U kunt deze [voorbeeld waarden](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) gebruiken als u dit artikel alleen als een oplossing gebruikt. Als u dit artikel gebruikt voor het configureren van een productie omgeving, vervangt u de voorbeeld instellingen door uw eigen waarden.
+Gebruik de volgende stappen om een virtueel netwerk te maken met behulp van de portal. U kunt deze [voorbeeld waarden](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) gebruiken als u dit artikel alleen als een oplossing gebruikt. Als u dit artikel gebruikt voor het configureren van een productie omgeving, vervangt u de voorbeeld instellingen door uw eigen waarden.
 
 > [!IMPORTANT]
 > U moet ervoor zorgen dat er geen overlap ping is voor IP-adressen in azure-of Azure Stack hub vNet-adres ruimten.
@@ -169,7 +169,7 @@ De lokale netwerkgateway verwijst doorgaans naar uw on-premises locatie. U geeft
   >[!Note]
   >Als uw on-premises netwerk wordt gewijzigd of als u het open bare IP-adres voor het VPN-apparaat wilt wijzigen, kunt u deze waarden later bijwerken.
 
-1. Selecteer in de portal **+ een resource maken**.
+1. Selecteer in de portal **+Een resource maken**.
 2. Voer in het zoekvak **lokale netwerk gateway**in en selecteer vervolgens **Enter** om te zoeken. Er wordt een lijst met resultaten weer gegeven.
 3. Selecteer **lokale netwerk gateway**en selecteer vervolgens **maken** om de pagina **lokale netwerk gateway maken** te openen.
 4. In **lokale netwerk gateway maken**geeft u de waarden voor uw lokale netwerk gateway op met behulp van de **voorbeeld waarden van de zelf studie**. Neem de volgende aanvullende waarden op:
@@ -212,4 +212,4 @@ U kunt de verbinding zien op de pagina **verbindingen** van de gateway van het v
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Cloud ontwerp patronen](https://docs.microsoft.com/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.
+- Zie [Cloud ontwerp patronen](/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.

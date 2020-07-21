@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 1b3c683dd3e4a68413f83fd3cc129d6e6f594e1b
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 650eef0f144ecafab4586d93f72e1defdf4a61ce
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910516"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477249"
 ---
 # <a name="configure-hybrid-cloud-identity-for-azure-and-azure-stack-hub-apps"></a>De hybride Cloud-identiteit voor Azure-en Azure Stack hub-apps configureren
 
@@ -69,4 +69,4 @@ Als u verbinding wilt maken met Azure Stack hub met behulp van code, gebruikt u 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie [identiteits architectuur voor Azure stack hub](/azure-stack/operator/azure-stack-identity-architecture.md)voor meer informatie over hoe identiteiten worden afgehandeld in azure stack hub.
-- Zie [Cloud ontwerp patronen](https://docs.microsoft.com/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.
+- Zie [Cloud ontwerp patronen](/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.

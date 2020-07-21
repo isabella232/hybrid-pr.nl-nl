@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b34ba7c10ff5f658d645923ae8b6de2fb2607ccb
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910595"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477266"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Een Maxi maal beschik bare MongoDB-oplossing implementeren op Azure en Azure Stack hub
 
@@ -40,9 +40,9 @@ In deze oplossing maakt u een voorbeeld omgeving voor het volgende:
 - Twee aangesloten Azure Stack hub geïntegreerde systemen (Azure Stack hub). Deze implementatie werkt niet op de Azure Stack Development Kit (ASDK). Zie [Wat is Azure stack hub?](https://azure.microsoft.com/products/azure-stack/hub/) voor meer informatie over Azure stack hub?
   - Een Tenant abonnement op elke Azure Stack hub. 
   - **Noteer de abonnements-ID en het Azure Resource Manager-eind punt voor elke Azure Stack hub.**
-- Een service-principal voor Azure Active Directory (Azure AD) die machtigingen heeft voor het Tenant abonnement op elke Azure Stack hub. Mogelijk moet u twee service-principals maken als de Azure Stack hubs worden geïmplementeerd op basis van verschillende Azure AD-tenants. Zie [een app-identiteit gebruiken om toegang te krijgen tot Azure stack hub-resources](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals)voor meer informatie over het maken van een service-principal voor Azure stack hub.
+- Een service-principal voor Azure Active Directory (Azure AD) die machtigingen heeft voor het Tenant abonnement op elke Azure Stack hub. Mogelijk moet u twee service-principals maken als de Azure Stack hubs worden geïmplementeerd op basis van verschillende Azure AD-tenants. Zie [een app-identiteit gebruiken om toegang te krijgen tot Azure stack hub-resources](/azure-stack/user/azure-stack-create-service-principals)voor meer informatie over het maken van een service-principal voor Azure stack hub.
   - **Noteer de toepassings-ID van elke service-principal, het client geheim en de Tenant naam (xxxxx.onmicrosoft.com).**
-- Ubuntu 16,04 is gepubliceerd naar de Marketplace van elke Azure Stack hub. Zie [Marketplace-items downloaden naar Azure stack hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item)voor meer informatie over Marketplace-syndicatie.
+- Ubuntu 16,04 is gepubliceerd naar de Marketplace van elke Azure Stack hub. Zie [Marketplace-items downloaden naar Azure stack hub](/azure-stack/operator/azure-stack-download-azure-marketplace-item)voor meer informatie over Marketplace-syndicatie.
 - [Docker voor Windows](https://docs.docker.com/docker-for-windows/) geïnstalleerd op uw lokale computer.
 
 ## <a name="get-the-docker-image"></a>De docker-installatie kopie ophalen

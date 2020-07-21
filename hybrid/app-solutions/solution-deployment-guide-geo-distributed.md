@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 8f2b7e48a62896acfce7293dcd4f18d5a43add01
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 741ddf2c3ed234788af359dd233f6a656fbea13c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910523"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477351"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Direct verkeer met een geografisch gedistribueerde app met behulp van Azure en Azure Stack hub
 
@@ -52,7 +52,7 @@ Voordat u een gedistribueerde app-footprint maakt, is het handig om de volgende 
 
 - **Aangepast domein voor de app:** Wat is de aangepaste domein naam die klanten gebruiken om toegang te krijgen tot de app? Voor de voor beeld-app is de aangepaste domein naam *www- \. scalableasedemo.com.*
 
-- **Traffic Manager domein:** Er wordt een domein naam gekozen bij het maken van een [Azure Traffic Manager-profiel](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles). Deze naam wordt gecombineerd met het *trafficmanager.net* -achtervoegsel voor het registreren van een domein vermelding die wordt beheerd door Traffic Manager. Voor de voor beeld-app is de gekozen naam *schaalbaar-ASE-demo*. Als gevolg hiervan is de volledige domein naam die wordt beheerd door Traffic Manager, *Scalable-ASE-demo.trafficmanager.net*.
+- **Traffic Manager domein:** Er wordt een domein naam gekozen bij het maken van een [Azure Traffic Manager-profiel](/azure/traffic-manager/traffic-manager-manage-profiles). Deze naam wordt gecombineerd met het *trafficmanager.net* -achtervoegsel voor het registreren van een domein vermelding die wordt beheerd door Traffic Manager. Voor de voor beeld-app is de gekozen naam *schaalbaar-ASE-demo*. Als gevolg hiervan is de volledige domein naam die wordt beheerd door Traffic Manager, *Scalable-ASE-demo.trafficmanager.net*.
 
 - **Strategie voor het schalen van de app-footprint:** Bepaal of het gebruik van de app wordt gedistribueerd over meerdere App Service omgevingen in één regio, meerdere regio's of een combi natie van beide benaderingen. De beslissing moet worden gebaseerd op de verwachtingen van waar klant verkeer van oorsprong is en hoe goed de rest van de ondersteunende back-end-infra structuur van een app kan worden geschaald. Een app kan bijvoorbeeld met een staatloze app van 100% worden geschaald met behulp van een combi natie van meerdere App Service omgevingen per Azure-regio, vermenigvuldigd met App Service omgevingen die zijn geïmplementeerd in meerdere Azure-regio's. Met 15 + wereld wijde Azure-regio's die beschikbaar zijn voor keuze, kunnen klanten echt een hele wereld voor Hyper-Scale-apps bouwen. Voor de voor beeld-app die hier wordt gebruikt, zijn er drie App Service omgevingen gemaakt in één Azure-regio (Zuid-Centraal).
 
@@ -84,7 +84,7 @@ Een Azure-abonnement en een installatie van Azure Stack hub zijn vereist.
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Een aangepast domein verkrijgen en DNS configureren
 
-Werk het DNS-zone bestand voor het domein bij. Azure AD kan vervolgens het eigendom van de aangepaste domein naam verifiëren. Gebruik [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) voor Azure/Office 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een ander DNS-REGI ster](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Werk het DNS-zone bestand voor het domein bij. Azure AD kan vervolgens het eigendom van de aangepaste domein naam verifiëren. Gebruik [Azure DNS](/azure/dns/dns-getstarted-portal) voor Azure/Office 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een ander DNS-REGI ster](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Een aangepast domein registreren bij een openbaar registratie service.
 
@@ -113,7 +113,7 @@ Stel hybride continue integratie/continue levering (CI/CD) in om de web-app te i
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Implementatie van web-app in beide clouds maken
 
-1. Bewerk het bestand **webapplication. csproj** : selecteren `Runtimeidentifier` en toevoegen `win10-x64` . (Zie [zelf-opgenomen implementatie](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) documentatie.)
+1. Bewerk het bestand **webapplication. csproj** : selecteren `Runtimeidentifier` en toevoegen `win10-x64` . (Zie [zelf-opgenomen implementatie](/dotnet/core/deploying/deploy-with-vs#simpleSelf) documentatie.)
 
     ![Web-app-project bestand bewerken in Visual Studio](media/solution-deployment-guide-geo-distributed/image3.png)
 
@@ -129,7 +129,7 @@ Stel hybride continue integratie/continue levering (CI/CD) in om de web-app te i
 
     ![Code toevoegen aan de build-definitie in azure-pijp lijnen](media/solution-deployment-guide-geo-distributed/image4.png)
 
-3. **Voer de build uit**. In het [zelf opgenomen implementatie constructie](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) proces worden artefacten gepubliceerd die kunnen worden uitgevoerd op Azure en Azure stack hub.
+3. **Voer de build uit**. In het [zelf opgenomen implementatie constructie](/dotnet/core/deploying/deploy-with-vs#simpleSelf) proces worden artefacten gepubliceerd die kunnen worden uitgevoerd op Azure en Azure stack hub.
 
 #### <a name="using-an-azure-hosted-agent"></a>Een door Azure gehoste agent gebruiken
 
@@ -229,11 +229,11 @@ Azure DevOps Services voorziet in een zeer Configureer bare en beheersbare pijp 
 21. Sla alle wijzigingen op.
 
 > [!Note]  
-> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
+> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
 
 ## <a name="part-2-update-web-app-options"></a>Deel 2: opties voor Web-Apps bijwerken
 
-[Azure App Service](https://docs.microsoft.com/azure/app-service/overview) biedt een uiterst schaalbare webhostingservice met self-patchfunctie.
+[Azure App Service](/azure/app-service/overview) biedt een uiterst schaalbare webhostingservice met self-patchfunctie.
 
 ![Azure App Service](media/solution-deployment-guide-geo-distributed/image27.png)
 
@@ -246,17 +246,17 @@ Azure DevOps Services voorziet in een zeer Configureer bare en beheersbare pijp 
 > [!Note]  
 > Gebruik een CNAME voor alle aangepaste DNS-namen, met uitzonde ring van een hoofd domein (bijvoorbeeld northwind.com).
 
-Zie voor het migreren van een live site en de DNS-domeinnaam naar App Service, [Een actieve DNS-naam migreren naar Azure App Service](https://docs.microsoft.com/azure/app-service/manage-custom-dns-migrate-domain).
+Zie voor het migreren van een live site en de DNS-domeinnaam naar App Service, [Een actieve DNS-naam migreren naar Azure App Service](/azure/app-service/manage-custom-dns-migrate-domain).
 
 ### <a name="prerequisites"></a>Vereisten
 
 Voor het volt ooien van deze oplossing:
 
-- [Maak een app service-app](https://docs.microsoft.com/azure/app-service/)of gebruik een app die is gemaakt voor een andere oplossing.
+- [Maak een app service-app](/azure/app-service/)of gebruik een app die is gemaakt voor een andere oplossing.
 
 - Koop een domein naam en zorg ervoor dat u toegang tot het DNS-REGI ster voor de domein provider hebt.
 
-Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom van de aangepaste domein naam. Gebruik [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) voor Azure/Office 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een ander DNS-REGI ster](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom van de aangepaste domein naam. Gebruik [Azure DNS](/azure/dns/dns-getstarted-portal) voor Azure/Office 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een ander DNS-REGI ster](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 - Een aangepast domein registreren bij een openbaar registratie service.
 
@@ -267,14 +267,14 @@ Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom
 Als u bijvoorbeeld DNS-vermeldingen wilt toevoegen voor northwindcloud.com en www \. northwindcloud.com, configureert u DNS-instellingen voor het hoofd domein northwindcloud.com.
 
 > [!Note]  
-> U kunt een domein naam aanschaffen met behulp van de [Azure Portal](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain). Om een aangepaste DNS-naam toe te wijzen aan een web-app, moet het [App Service-plan](https://azure.microsoft.com/pricing/details/app-service/) van de web-app een betaalde categorie zijn (**Shared**, **Basic**, **Standard** of ** Premium**).
+> U kunt een domein naam aanschaffen met behulp van de [Azure Portal](/azure/app-service/manage-custom-dns-buy-domain). Om een aangepaste DNS-naam toe te wijzen aan een web-app, moet het [App Service-plan](https://azure.microsoft.com/pricing/details/app-service/) van de web-app een betaalde categorie zijn (**Shared**, **Basic**, **Standard** of ** Premium**).
 
 ### <a name="create-and-map-cname-and-a-records"></a>CNAME-en A-records maken en toewijzen
 
 #### <a name="access-dns-records-with-domain-provider"></a>Toegang tot DNS-records via domeinprovider
 
 > [!Note]  
->  Gebruik Azure DNS om een aangepaste DNS-naam te configureren voor Azure Web Apps. Zie [Use Azure DNS to provide custom domain settings for an Azure service](https://docs.microsoft.com/azure/dns/dns-custom-domain) (Azure DNS gebruiken om aangepaste domeininstellingen te verstrekken voor een Azure-service) voor meer informatie.
+>  Gebruik Azure DNS om een aangepaste DNS-naam te configureren voor Azure Web Apps. Zie [Use Azure DNS to provide custom domain settings for an Azure service](/azure/dns/dns-custom-domain) (Azure DNS gebruiken om aangepaste domeininstellingen te verstrekken voor een Azure-service) voor meer informatie.
 
 1. Meld u aan bij de website van de hoofd provider.
 
@@ -355,14 +355,14 @@ In dit gedeelte gaan we het volgende doen:
 > - SSL-certificaat binding met scripts automatiseren.
 
 > [!Note]  
-> Als dat nodig is, kunt u een SSL-certificaat van de klant verkrijgen in de Azure Portal en het binden aan de web-app. Zie de [zelf studie over app service-certificaten](https://docs.microsoft.com/azure/app-service/web-sites-purchase-ssl-web-site)voor meer informatie.
+> Als dat nodig is, kunt u een SSL-certificaat van de klant verkrijgen in de Azure Portal en het binden aan de web-app. Zie de [zelf studie over app service-certificaten](/azure/app-service/web-sites-purchase-ssl-web-site)voor meer informatie.
 
 ### <a name="prerequisites"></a>Vereisten
 
 Voor het volt ooien van deze oplossing:
 
-- [Een App Service-app maken.](https://docs.microsoft.com/azure/app-service/)
-- [Wijs een aangepaste DNS-naam toe aan uw web-app.](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)
+- [Een App Service-app maken.](/azure/app-service/)
+- [Wijs een aangepaste DNS-naam toe aan uw web-app.](/azure/app-service/app-service-web-tutorial-custom-domain)
 - Haal een SSL-certificaat van een vertrouwde certificerings instantie op en gebruik de sleutel om de aanvraag te ondertekenen.
 
 ### <a name="requirements-for-your-ssl-certificate"></a>Vereisten voor uw SSL-certificaat
@@ -402,7 +402,7 @@ Als u een aangepast SSL-certificaat aan de Web-App wilt koppelen, moet het [app 
 
     ![De prijs categorie in de web-app controleren](media/solution-deployment-guide-geo-distributed/image35.png)
 
-Aangepaste SSL wordt niet ondersteund in de laag **gratis** of **gedeeld** . Volg de stappen in de volgende sectie of de pagina **uw prijs categorie kiezen** om [uw SSL-certificaat te uploaden en te binden](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Aangepaste SSL wordt niet ondersteund in de laag **gratis** of **gedeeld** . Volg de stappen in de volgende sectie of de pagina **uw prijs categorie kiezen** om [uw SSL-certificaat te uploaden en te binden](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 #### <a name="scale-up-your-app-service-plan"></a>Uw App Service-plan omhoog schalen
 
@@ -463,7 +463,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 Wanneer u hierom wordt gevraagd, definieert u een export wachtwoord voor het uploaden van uw SSL-certificaat naar App Service later.
 
-Wanneer IIS of **Certreq.exe** wordt gebruikt om de certificaat aanvraag te genereren, installeert u het certificaat op een lokale computer en [exporteert u het certificaat naar pfx](https://technet.microsoft.com/library/cc754329(v=ws.11).aspx).
+Wanneer IIS of **Certreq.exe** wordt gebruikt om de certificaat aanvraag te genereren, installeert u het certificaat op een lokale computer en [exporteert u het certificaat naar pfx](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754329(v=ws.11)).
 
 #### <a name="upload-the-ssl-certificate"></a>Het SSL-certificaat uploaden
 
@@ -508,13 +508,13 @@ Als App Service klaar bent met het uploaden van het certificaat, wordt het weer 
 
 #### <a name="remap-the-a-record-for-ip-ssl"></a>De A-record opnieuw toewijzen voor IP SSL
 
-Als op IP gebaseerde SSL niet wordt gebruikt in de web-app, gaat u door naar [https testen voor uw aangepaste domein](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
+Als op IP gebaseerde SSL niet wordt gebruikt in de web-app, gaat u door naar [https testen voor uw aangepaste domein](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 De web-app maakt standaard gebruik van een gedeeld openbaar IP-adres. Wanneer het certificaat is gebonden aan SSL op basis van IP, App Service maakt een nieuw en toegewijd IP-adres voor de web-app.
 
 Wanneer een A-record wordt toegewezen aan de web-app, moet het domein register worden bijgewerkt met het specifieke IP-adres.
 
-De pagina **aangepast domein** wordt bijgewerkt met het nieuwe, toegewezen IP-adres. Kopieer dit [IP-adres](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain)en wijs vervolgens de [A-record](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-domain) opnieuw toe aan dit nieuwe IP-adres.
+De pagina **aangepast domein** wordt bijgewerkt met het nieuwe, toegewezen IP-adres. Kopieer dit [IP-adres](/azure/app-service/app-service-web-tutorial-custom-domain)en wijs vervolgens de [A-record](/azure/app-service/app-service-web-tutorial-custom-domain) opnieuw toe aan dit nieuwe IP-adres.
 
 #### <a name="test-https"></a>HTTPS testen
 
@@ -626,4 +626,4 @@ Door het omleiden van gegevens verkeer via Azure Traffic Manager en geografie-sp
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Cloud ontwerp patronen](https://docs.microsoft.com/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.
+- Zie [Cloud ontwerp patronen](/azure/architecture/patterns)voor meer informatie over Azure Cloud-patronen.

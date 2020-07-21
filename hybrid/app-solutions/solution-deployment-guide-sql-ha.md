@@ -7,16 +7,16 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ff6d5b9667e63a6b8d232b6dd93db2d8b12fd46d
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910390"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477079"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Een SQL Server 2016-beschikbaarheids groep implementeren op Azure en Azure Stack hub
 
-In dit artikel wordt stapsgewijs een geautomatiseerde implementatie van een basis met hoge Beschik baarheid (HA) SQL Server 2016 Enter prise-cluster met een asynchrone site voor nood herstel (DR) in twee Azure Stack hub-omgevingen. Zie AlwaysOn [Availability groups: een oplossing voor hoge Beschik baarheid en herstel na nood gevallen](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016)voor meer informatie over SQL Server 2016 en hoge Beschik baarheid.
+In dit artikel wordt stapsgewijs een geautomatiseerde implementatie van een basis met hoge Beschik baarheid (HA) SQL Server 2016 Enter prise-cluster met een asynchrone site voor nood herstel (DR) in twee Azure Stack hub-omgevingen. Zie AlwaysOn [Availability groups: een oplossing voor hoge Beschik baarheid en herstel na nood gevallen](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016)voor meer informatie over SQL Server 2016 en hoge Beschik baarheid.
 
 In deze oplossing bouwt u een voorbeeld omgeving in voor het volgende:
 
@@ -40,9 +40,9 @@ In deze oplossing bouwt u een voorbeeld omgeving in voor het volgende:
 - Twee aangesloten Azure Stack hub geïntegreerde systemen (Azure Stack hub). Deze implementatie werkt niet op de Azure Stack Development Kit (ASDK). Zie [Azure stack Overview](https://azure.microsoft.com/overview/azure-stack/)voor meer informatie over Azure stack hub.
 - Een Tenant abonnement op elke Azure Stack hub.
   - **Noteer de abonnements-ID en het Azure Resource Manager-eind punt voor elke Azure Stack hub.**
-- Een service-principal voor Azure Active Directory (Azure AD) die machtigingen heeft voor het Tenant abonnement op elke Azure Stack hub. Mogelijk moet u twee service-principals maken als de Azure Stack hubs worden geïmplementeerd op basis van verschillende Azure AD-tenants. Zie [service-principals maken om apps toegang te geven tot Azure stack hub-resources](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals)voor meer informatie over het maken van een service-principal voor Azure stack hub.
+- Een service-principal voor Azure Active Directory (Azure AD) die machtigingen heeft voor het Tenant abonnement op elke Azure Stack hub. Mogelijk moet u twee service-principals maken als de Azure Stack hubs worden geïmplementeerd op basis van verschillende Azure AD-tenants. Zie [service-principals maken om apps toegang te geven tot Azure stack hub-resources](/azure-stack/user/azure-stack-create-service-principals)voor meer informatie over het maken van een service-principal voor Azure stack hub.
   - **Noteer de toepassings-ID van elke service-principal, het client geheim en de Tenant naam (xxxxx.onmicrosoft.com).**
-- SQL Server 2016 Enter prise syndicated op de Marketplace van elke Azure Stack hub. Zie [Marketplace-items downloaden naar Azure stack hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item)voor meer informatie over Marketplace-syndicatie.
+- SQL Server 2016 Enter prise syndicated op de Marketplace van elke Azure Stack hub. Zie [Marketplace-items downloaden naar Azure stack hub](/azure-stack/operator/azure-stack-download-azure-marketplace-item)voor meer informatie over Marketplace-syndicatie.
     **Zorg ervoor dat uw organisatie beschikt over de juiste SQL-licenties.**
 - [Docker voor Windows](https://docs.docker.com/docker-for-windows/) geïnstalleerd op uw lokale computer.
 
@@ -105,6 +105,6 @@ Docker-installatie kopieën voor elke implementatie elimineren afhankelijkheids 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Gebruik SQL Server Management Studio hand matig failover over het cluster. Zie [een geforceerde hand matige failover uitvoeren van een always on-beschikbaarheids groep (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
+- Gebruik SQL Server Management Studio hand matig failover over het cluster. Zie [een geforceerde hand matige failover uitvoeren van een always on-beschikbaarheids groep (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
 - Meer informatie over hybride Cloud-apps. Zie [hybride cloud oplossingen.](https://aka.ms/azsdevtutorials)
 - Gebruik uw eigen gegevens of wijzig de code in dit voor beeld op [github](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

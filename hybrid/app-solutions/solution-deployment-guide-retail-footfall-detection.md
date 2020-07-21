@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6913cc522da447092dad0af24e148a3b2576495c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910325"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477164"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Een op AI gebaseerde Footfall-detectie oplossing implementeren met behulp van Azure en Azure Stack hub
 
@@ -44,7 +44,7 @@ Voordat u aan de slag gaat met deze implementatie handleiding, moet u het volgen
 - Maak twee service-principals in uw Directory:
   - Eén ingesteld voor gebruik met Azure-resources, met toegang tot het Azure-abonnements bereik.
   - Er is een set ingesteld voor gebruik met Azure Stack hub-resources, met toegang op het Azure Stack hub-abonnements bereik.
-  - Zie [een app-identiteit gebruiken voor toegang tot resources](/azure-stack/operator/azure-stack-create-service-principals.md)voor meer informatie over het maken van service-principals en het autoriseren van de toegang. Als u liever Azure CLI wilt gebruiken, raadpleegt u [een Azure-service-principal maken met Azure cli](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+  - Zie [een app-identiteit gebruiken voor toegang tot resources](/azure-stack/operator/azure-stack-create-service-principals.md)voor meer informatie over het maken van service-principals en het autoriseren van de toegang. Als u liever Azure CLI wilt gebruiken, raadpleegt u [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
 - Implementeer Azure-Cognitive Services in azure of Azure Stack hub.
   - Lees eerst [meer over Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
   - Ga vervolgens naar [Azure stack hub en implementeer Azure Cognitive Services](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) om Cognitive services te implementeren op Azure stack hub. U moet zich eerst aanmelden voor toegang tot de preview-versie.

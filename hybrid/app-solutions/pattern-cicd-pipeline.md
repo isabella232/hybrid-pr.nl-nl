@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 306cc9604a8e919724f9f76b7e5122d534d2d1ae
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: e26056a9507a7467473b009725d4f210d9d59ec8
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910421"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477232"
 ---
 # <a name="devops-pattern"></a>DevOps patroon
 
@@ -47,7 +47,7 @@ Het DevOps-patroon is bedoeld om consistentie tussen implementaties te garandere
 - Werken de implementatie parameters in alle doel omgevingen?
 - Zijn er resource-specifieke eigenschappen beschikbaar in alle doel-Clouds?
 
-Zie [Azure Resource Manager sjablonen voor Cloud consistentie ontwikkelen](https://docs.microsoft.com/azure/azure-resource-manager/templates-cloud-consistency)voor meer informatie.
+Zie [Azure Resource Manager sjablonen voor Cloud consistentie ontwikkelen](/azure/azure-resource-manager/templates-cloud-consistency)voor meer informatie.
 
 Houd ook rekening met de volgende punten wanneer u bepaalt hoe u dit patroon wilt implementeren:
 
