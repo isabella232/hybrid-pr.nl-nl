@@ -10,14 +10,17 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 06/30/2020
-  ms.openlocfilehash: ee69d8f1110166063edc5a4b2cdbfaf36b402868
-  ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+  ms.openlocfilehash: 9793f34db13e324de65b719613c0f4dbf4bdf127
+  ms.sourcegitcommit: 8d75007af6ad574e0629208464bbadb97a5c438e
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 07/20/2020
-  ms.locfileid: "86477300"
+  ms.lasthandoff: 07/22/2020
+  ms.locfileid: "86949658"
 highlightedContent:
   items:
+  - title: Ontdek de nieuwe Azure Stack HCI
+    itemType: video
+    url: https://azure.microsoft.com/resources/videos/discover-the-new-azure-stack-hci/
   - title: Azure Hybrid Virtual Event
     itemType: video
     url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
@@ -62,7 +65,7 @@ conceptualContent:
   title: Technologieën die hybride oplossingen mogelijk maken
   summary: Services en producten voor de ontwikkeling en uitvoering van hybride oplossingen.
   items:
-  - title: AI + machine learning
+  - title: AI + Machine Learning
     links:
     - url: /azure/bot-service
       itemType: overview
