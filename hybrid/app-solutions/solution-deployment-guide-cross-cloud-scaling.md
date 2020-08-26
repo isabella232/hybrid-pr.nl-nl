@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477334"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886812"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Een app implementeren waarmee u meerdere clouds schaalt met behulp van Azure en Azure Stack hub
 
@@ -40,7 +40,7 @@ In deze oplossing bouwt u een voorbeeld omgeving in voor het volgende:
 - Azure-abonnement. Maak, indien nodig, een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 - Een Azure Stack hub geïntegreerd systeem of implementatie van Azure Stack Development Kit (ASDK).
   - Zie [install the ASDK](/azure-stack/asdk/asdk-install.md)(Engelstalig) voor instructies over het installeren van Azure stack hub.
-  - Voor een ASDK-automatiserings script na de implementatie gaat u naar:[https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
+  - Voor een ASDK-automatiserings script na de implementatie gaat u naar: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Het volt ooien van deze installatie kan enkele uren in beslag nemen.
 - Implementeer [app service](/azure-stack/operator/azure-stack-app-service-deploy.md) PaaS services op Azure stack hub.
 - [Maak plannen/aanbiedingen](/azure-stack/operator/service-plan-offer-subscription-overview.md) binnen de Azure stack hub-omgeving.
@@ -64,11 +64,11 @@ Zorg ervoor dat lokaal geïmplementeerde apps zijn geconfigureerd voor hoge Besc
 
 De oplossing voor meerdere clouds zorgt voor naadloos beheer en de vertrouwde interface tussen omgevingen. Power shell wordt aanbevolen voor beheer op meerdere platforms.
 
-## <a name="cross-cloud-scaling"></a>Schalen door de cloud
+## <a name="cross-cloud-scaling"></a>Schalen in de cloud
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Een aangepast domein ophalen en DNS configureren
 
-Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom van de aangepaste domein naam. Gebruik [Azure DNS](/azure/dns/dns-getstarted-portal) voor Azure/Office 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een ander DNS-REGI ster](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom van de aangepaste domein naam. Gebruik [Azure DNS](/azure/dns/dns-getstarted-portal) voor azure/Microsoft 365/externe DNS-records in azure, of Voeg de DNS-vermelding toe aan [een andere DNS-registratie](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 1. Een aangepast domein registreren bij een openbaar registratie service.
 2. Meld u aan bij de domeinnaamregistrar voor het domein. Een goedgekeurde beheerder kan verplicht zijn om DNS-updates uit te voeren.
