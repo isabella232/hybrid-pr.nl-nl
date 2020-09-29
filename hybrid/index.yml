@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 09/02/2020
-  ms.openlocfilehash: 8109b1b42c133afa3179b362c543118965486ac7
-  ms.sourcegitcommit: 64698a0824c87d0838b57cff05187f4225bb619c
+  ms.openlocfilehash: fe346e09aba6e073f291037eb767a3936dea3a99
+  ms.sourcegitcommit: 1c9d681b45f3cc91fd6896badf998be68e284a35
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 09/24/2020
-  ms.locfileid: "91209702"
+  ms.lasthandoff: 09/28/2020
+  ms.locfileid: "91407715"
 highlightedContent:
   items:
   - title: 'Ignite 2020: Hybride sessies'
@@ -263,20 +263,6 @@ conceptualContent:
     - url: /azure/fxt-edge-filer/fxt-overview
       itemType: overview
       text: Azure FXT Edge Filer
-  - title: Hulpprogramma's
-    links:
-    - url: /dotnet/azure/
-      itemType: overview
-      text: .NET-ontwikkeling voor Azure
-    - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-      itemType: overview
-      text: Vision AI-ontwikkelaarskit
-    - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
-      itemType: overview
-      text: Azure IoT-hulpprogramma's voor Visual Studio Code
-    - url: /visualstudio/azure/
-      itemType: overview
-      text: Ontwikkelen in Visual Studio in Azure
 additionalContent:
   sections:
   - title: Hybride oplossingen
@@ -308,47 +294,113 @@ additionalContent:
         text: Footfall-detectie (retail)
       - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
         text: Geografisch verdeelde app
-  - title: Aanvullende bronnen
+  - title: Resources evalueren en leren
     items:
-    - title: Algemeen
+    - title: Azure Stack
       links:
-      - url: /azure-stack/operator/compare-azure-azure-stack
-        text: Azure Global Cloud versus Azure Stack
-      - url: https://azure.microsoft.com/blog/topics/hybrid/
-        text: Azure Hybrid-blog
-      - url: https://azure.microsoft.com/overview/azure-hybrid/
-        text: Hybride Azure-mogelijkheden
-      - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
-        text: Hybride virtuele Azure-gebeurtenis
-      - url: https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22
-        text: Azure Stack Hub-oplossingen van klanten
-      - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
-        text: Verhalen van klanten over de hybride cloud
-      - url: /answers/products/
-        text: Microsoft Q&A-forums
-    - title: Evaluatie en leren
-      links:
-      - url: https://github.com/likamrat/azure_arc
-        text: Azure Arc-snelstartgidsen
-      - url: https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator
-        text: Oplossingsverbetering voor Azure IoT Edge AI-video-intelligentie
-      - url: https://labs.iotedge.dev/
-        text: Praktische labs voor Azure IoT Edge
-      - url: https://www.azureiotsolutions.com/Accelerators
-        text: Azure IoT-oplossingsversnellers
       - url: /azure-stack/asdk
         text: Azure Stack Development Kit
       - url: https://github.com/Azure/AzureStackHCI-EvalGuide
         text: Evaluatiegids voor Azure Stack HCI
       - url: https://www.youtube.com/watch?v=to8D7Xl9SU8
         text: Introductie tot hybride apps in Azure Stack
-      - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
-        text: Gecertificeerd voor Azure IoT Edge-apparaten
-      - url: /samples/browse/
-        text: Codevoorbeeldenbrowser
-      - url: https://docs.docker.com/
-        text: Docker-docs
       - url: https://www.youtube.com/watch?v=2lw8zOpJTn0
         text: Dynamisch schalen van Azure Stack Hub naar Azure
+    - title: Edge
+      links:
+      - url: https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator
+        text: Oplossingsverbetering voor Azure IoT Edge AI-video-intelligentie
+      - url: https://labs.iotedge.dev/
+        text: Praktische labs voor Azure IoT Edge
+      - url: https://www.azureiotsolutions.com/Accelerators
+        text: Azure IoT-oplossingsversnellers
+      - url: https://catalog.azureiotsolutions.com/alldevices?filters={%2218%22:[%221%22]}
+        text: Gecertificeerd voor Azure IoT Edge-apparaten
+    - title: Algemeen
+      links:
+      - url: /learn/modules/align-requirements-in-azure/
+        text: Vereisten afstemmen met cloudtypen en servicemodellen in Azure
+      - url: https://azure.microsoft.com/overview/azure-hybrid/
+        text: Hybride Azure-mogelijkheden
+      - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
+        text: Hybride virtuele Azure-gebeurtenis
+      - url: /learn/modules/intro-to-azure-hybrid-services/
+        text: Introductie tot de hybride Azure-cloud
       - url: /learn
         text: Microsoft Learn
+    - title: Identiteit en beveiliging
+      links:
+      - url: /learn/modules/azure-sentinel-deploy-configure/
+        text: Azure Sentinel implementeren en verbinden met gegevensbronnen
+      - url: /learn/modules/implement-hybrid-identity-windows-server/
+        text: Hybride identiteit implementeren met Windows Server
+      - url: /learn/modules/intro-to-azure-sentinel/
+        text: Introductie tot Azure Sentinel
+      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+        text: Hybride cloudbeheer, bewaking en beveiliging met Windows Server
+    - title: Beheer
+      links:
+      - url: https://github.com/likamrat/azure_arc
+        text: Azure Arc-snelstartgidsen
+      - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
+        text: Strategieën voor hoge beschikbaarheid en herstel na noodgevallen
+      - url: /learn/modules/explore-iaas-paas-platform-tools-for-high-availability-disaster-recovery/
+        text: IaaS en PaaS-platformhulpprogramma's voor hoge beschikbaarheid en herstel na noodgevallen
+      - url: /learn/modules/intro-to-azure-arc/
+        text: Introductie tot Azure Arc
+      - url: /learn/modules/manage-hybrid-workloads-azure-arc/
+        text: Hybride workloads beheren met Azure Arc
+      - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
+        text: Virtuele Windows Server IaaS-machines en hybride instanties bewaken
+      - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
+        text: Hybride cloudbeheer, bewaking en beveiliging met Windows Server
+    - title: Netwerken
+      links:
+      - url: /learn/modules/design-a-hybrid-network-architecture/
+        text: Een hybride netwerkarchitectuur ontwerpen op Azure
+      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+        text: Veilig hybride services beschikbaar maken met Azure Relay
+      - url: /learn/modules/implement-hybrid-network-infrastructure/
+        text: Hybride netwerkinfrastructuur implementeren
+    - title: Storage
+      links:
+      - url: /learn/modules/implement-hybrid-file-server-infrastructure/
+        text: Een hybride bestandsserverinfrastructuur implementeren
+      - url: /learn/modules/implement-hybrid-backup-recovery-windows-server-iaas/
+        text: Hybride back-up en herstel implementeren met Windows Server IaaS
+  - title: Aanvullende bronnen
+    items:
+    - title: Ontwikkelaar
+      links:
+      - url: /azure/developer/
+        text: Azure-ontwikkelaarsdocs en hulpprogramma's
+      - url: /azure/architecture/hybrid/azure-arc-hybrid-config
+        text: Hybride Azure-architecturen
+      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+        text: Azure IoT-hulpprogramma's voor Visual Studio Code
+      - url: /samples/browse/
+        text: Codevoorbeeldenbrowser
+      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+        text: Vision AI-ontwikkelaarskit
+      - url: /visualstudio/azure/
+        text: Ontwikkelen in Visual Studio in Azure
+    - title: Algemeen
+      links:
+      - url: https://azure.microsoft.com/blog/topics/hybrid/
+        text: Azure Hybrid-blog
+      - url: https://azure.microsoft.com/overview/azure-hybrid/
+        text: Hybride Azure-mogelijkheden
+      - url: https://channel9.msdn.com/Search?term=%22Azure%20Stack%20Hub%20Partner%20Solutions%20Series%22
+        text: Azure Stack Hub-oplossingen van klanten
+      - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
+        text: Verhalen van klanten over de hybride cloud
+    - title: Help en ondersteuning
+      links:
+      - url: https://azure.microsoft.com/support/options/
+        text: Azure-ondersteuning
+      - url: https://feedback.azure.com/
+        text: Azure-gebruikersfeedback
+      - url: /answers/products/
+        text: Microsoft Q&A-forums
+      - url: https://stackoverflow.com/
+        text: Stack Overflow
