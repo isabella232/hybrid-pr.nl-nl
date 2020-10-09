@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
+ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477079"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852470"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Een SQL Server 2016-beschikbaarheids groep implementeren op Azure en Azure Stack hub
 
@@ -106,5 +106,5 @@ Docker-installatie kopieën voor elke implementatie elimineren afhankelijkheids 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Gebruik SQL Server Management Studio hand matig failover over het cluster. Zie [een geforceerde hand matige failover uitvoeren van een always on-beschikbaarheids groep (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
-- Meer informatie over hybride Cloud-apps. Zie [hybride cloud oplossingen.](https://aka.ms/azsdevtutorials)
+- Meer informatie over hybride Cloud-apps. Zie [hybride cloud oplossingen.](/azure-stack/user/)
 - Gebruik uw eigen gegevens of wijzig de code in dit voor beeld op [github](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).
