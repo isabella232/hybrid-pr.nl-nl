@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
+ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477317"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92353475"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Implementeer hybride app met on-premises gegevens die meerdere clouds schalen
 
@@ -37,7 +37,7 @@ Deze zelfstudie bestaat uit de volgende taken:
 > - Configureer automatisch verkeer overschakelen tussen de wereld wijde Azure-en Azure Stack hub.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram hybride pijlers](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack hub is een uitbrei ding van Azure. Azure Stack hub biedt de flexibiliteit en innovatie van Cloud Computing naar uw on-premises omgeving, waardoor u de enige hybride Cloud kunt maken en implementeren.  
 > 
 > In het artikel [hybride overwegingen](overview-app-design-considerations.md) voor het ontwerpen van een app worden de pijlers van de software kwaliteit (plaatsing, schaal baarheid, Beschik baarheid, tolerantie, beheersbaarheid en beveiliging) beoordeeld voor het ontwerpen, implementeren en beheren van hybride apps. De ontwerp overwegingen helpen bij het optimaliseren van het ontwerp van hybride apps, zodat de uitdagingen in productie omgevingen worden geminimaliseerd.
@@ -153,7 +153,7 @@ Als u de verbinding tussen de Webfront-end in Azure en de SQL Server-data base i
 
 De virtuele netwerk gateway aan de Azure-kant van het hybride netwerk moet punt-naar-site-verbindingen toestaan om te integreren met Azure App Service.
 
-1. Ga in azure naar de pagina virtuele netwerk gateway. Onder **instellingen**selecteert u **punt-naar-site-configuratie**.
+1. Ga in het Azure Portal naar de pagina virtuele netwerk gateway. Onder **instellingen**selecteert u **punt-naar-site-configuratie**.
 
     ![Punt-naar-site optie in azure Virtual Network-gateway](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -192,7 +192,7 @@ Zie [uw app integreren met een Azure-Virtual Network](/azure/app-service/web-sit
 
 De lokale netwerk gateway in het virtuele netwerk Azure Stack hub moet worden geconfigureerd om verkeer te routeren vanuit het App Service punt-naar-site-adres bereik.
 
-1. Ga in Azure Stack hub naar de **lokale netwerk gateway**. Selecteer onder **Instellingen** de optie **Configuratie**.
+1. Ga in de Azure Stack hub-Portal naar de **lokale netwerk gateway**. Selecteer onder **Instellingen** de optie **Configuratie**.
 
     ![De optie gateway configuratie in de lokale netwerk gateway van Azure Stack hub](media/solution-deployment-guide-hybrid/image14.png)
 
@@ -238,13 +238,13 @@ SSL toevoegen aan Azure:
 
 1. Controleer of het SSL-certificaat dat u hebt ontvangen, geldig is voor het subdomein dat u hebt gemaakt. (U kunt Joker certificaten gebruiken.)
 
-2. Volg in azure de instructies in de **Web-app voorbereiden** en **BIND uw SSL-certificaat** in de secties [een bestaand aangepast SSL-certificaat binden aan Azure web apps](/azure/app-service/app-service-web-tutorial-custom-ssl) . Selecteer **SSL op basis van SNI** als het **SSL-type**.
+2. Volg in de Azure Portal de instructies in de **Web-app voorbereiden** en **BIND uw SSL-certificaat** in de secties [een bestaand aangepast SSL-certificaat binden aan Azure web apps](/azure/app-service/app-service-web-tutorial-custom-ssl) . Selecteer **SSL op basis van SNI** als het **SSL-type**.
 
-3. Alle verkeer omleiden naar de HTTPS-poort. Volg de instructies in de sectie **https afdwingen** van het artikel [een bestaand aangepast SSL-certificaat binden aan Azure web apps](/azure/app-service/app-service-web-tutorial-custom-ssl) .
+3. Alle verkeer omleiden naar de HTTPS-poort. Volg de instructies in de sectie   **https afdwingen** van het artikel [een bestaand aangepast SSL-certificaat binden aan Azure web apps](/azure/app-service/app-service-web-tutorial-custom-ssl) .
 
 SSL toevoegen aan Azure Stack hub:
 
-1. Herhaal de stappen 1-3 die u hebt gebruikt voor Azure.
+1. Herhaal de stappen 1-3 die u hebt gebruikt voor Azure met behulp van de Azure Stack hub-Portal.
 
 ## <a name="configure-and-deploy-the-web-app"></a>De web-app configureren en implementeren
 
@@ -300,7 +300,7 @@ Wanneer u uw web-app in een App Service omgeving maakt, begint deze met één ex
 
 ### <a name="enable-automatic-scale-out"></a>Automatisch uitschalen inschakelen
 
-1. Ga in azure naar het App Service plan voor de sites die u wilt uitschalen en selecteer vervolgens **uitschalen (app service plan)**.
+1. Zoek in de Azure Portal het App Service plan voor de sites die u wilt uitschalen en selecteer vervolgens **uitschalen (app service plan)**.
 
     ![Uitschalen Azure App Service](media/solution-deployment-guide-hybrid/image16.png)
 
@@ -327,7 +327,7 @@ Wanneer u uw web-app in een App Service omgeving maakt, begint deze met één ex
    - Stel de **drempel waarde** in op **50**.
    - Stel de **duur** in op **10**.
 
-#### <a name="action"></a>Actie
+#### <a name="action"></a>Bewerking
 
 1. Selecteer onder **bewerking**de optie **aantal verhogen per**.
 
@@ -361,7 +361,7 @@ Wanneer het verkeer afneemt, kan de Azure-web-app automatisch het aantal actieve
    - Stel de **drempel waarde** in op **30**.
    - Stel de **duur** in op **10**.
 
-#### <a name="action"></a>Actie
+#### <a name="action"></a>Bewerking
 
 1. Selecteer onder **bewerking**de optie **aantal verlagen door**.
 
@@ -372,7 +372,7 @@ Wanneer het verkeer afneemt, kan de Azure-web-app automatisch het aantal actieve
 
 ## <a name="create-a-traffic-manager-profile-and-configure-cross-cloud-scaling"></a>Een Traffic Manager profiel maken en cross-Cloud schalen configureren
 
-Maak een Traffic Manager profiel in Azure en configureer eind punten om cross-Cloud schalen in te scha kelen.
+Maak een Traffic Manager profiel met behulp van de Azure Portal en configureer eind punten om cross-Cloud schalen in te scha kelen.
 
 ### <a name="create-traffic-manager-profile"></a>Traffic Manager profiel maken
 
@@ -413,7 +413,7 @@ Maak een Traffic Manager profiel in Azure en configureer eind punten om cross-Cl
 U configureert nu het Azure-eind punt.
 
 1. Selecteer **eind punten**op **Traffic Manager profiel**.
-2. Selecteer **+ toevoegen**.
+2. Selecteer **+Toevoegen**.
 3. Gebruik op **eind punt toevoegen**de volgende instellingen voor Azure:
 
    - Selecteer voor **type** **Azure-eind punt**.
@@ -430,15 +430,15 @@ Nadat beide eind punten zijn geconfigureerd, worden ze weer gegeven in **Traffic
 
 ![Eind punten in Traffic Manager profiel](media/solution-deployment-guide-hybrid/image20.png)
 
-## <a name="set-up-application-insights-monitoring-and-alerting"></a>Application Insights bewaking en waarschuwingen instellen
+## <a name="set-up-application-insights-monitoring-and-alerting-in-azure"></a>Application Insights bewaking en waarschuwingen in azure instellen
 
 Met Azure-toepassing Insights kunt u uw app bewaken en waarschuwingen verzenden op basis van de voor waarden die u configureert. Enkele voor beelden zijn: de app is niet beschikbaar, er zijn fouten opgetreden of prestatie problemen worden weer gegeven.
 
-U gebruikt Application Insights metrische gegevens om waarschuwingen te maken. Wanneer deze waarschuwingen worden geactiveerd, wordt het exemplaar van uw web-app automatisch overgeschakeld van Azure Stack hub naar Azure om uit te schalen en vervolgens weer terug naar Azure Stack hub om in te schalen.
+U gebruikt Azure-toepassing Insights-metrische gegevens om waarschuwingen te maken. Wanneer deze waarschuwingen worden geactiveerd, wordt het exemplaar van uw web-app automatisch overgeschakeld van Azure Stack hub naar Azure om uit te schalen en vervolgens weer terug naar Azure Stack hub om in te schalen.
 
 ### <a name="create-an-alert-from-metrics"></a>Een waarschuwing maken vanuit metrische gegevens
 
-Ga naar de resource groep voor deze zelf studie en selecteer vervolgens het Application Insights exemplaar om **Application Insights**te openen.
+In de Azure Portal gaat u naar de resource groep voor deze zelf studie en selecteert u de Application Insights instantie om **Application Insights**te openen.
 
 ![Application Insights](media/solution-deployment-guide-hybrid/image21.png)
 
