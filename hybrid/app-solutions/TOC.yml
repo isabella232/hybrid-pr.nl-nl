@@ -1,8 +1,8 @@
-- name: Documentatie over Azure Hybrid
+- name: Documentatie voor hybride en multicloudoplossingen
   href: index.yml
 - name: Overzicht
   items:
-    - name: Voorbeelden van hybride patronen en oplossingen
+    - name: App-patronen en oplossingsvoorbeelden
       href: overview-patterns-solution-examples.md
 - name: Patronen
   items:
@@ -58,7 +58,7 @@
       href: 'https://aka.ms/edgetrainingdeploy'
 - name: Concepten
   items:
-    - name: Overwegingen bij het ontwerp van hybride apps
+    - name: Overwegingen bij app-ontwerp
       href: overview-app-design-considerations.md
 - name: Verwant
   items:

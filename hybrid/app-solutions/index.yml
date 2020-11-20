@@ -1,36 +1,36 @@
 ### YamlMime:Landing
-title: Documentatie voor hybride Azure-patronen en -oplossingen
-summary: Meer informatie over hoe u voorbeelden van hybride patronen en oplossingen in uw app-ontwikkeling gebruikt. Azure en Azure Stack maken de ontwikkeling mogelijk van hybride toepassingen die zijn gebouwd in een suite intelligente cloud- en intelligent edge-services.
+title: Documentatie voor hybride Azure- en multicloudpatronen en -oplossingen
+summary: Meer informatie over het gebruik van hybride en multicloudpatronen en oplossingsvoorbeelden in uw app-ontwikkeling, gebouwd op basis van een suite intelligente cloud en intelligente edge-services.
 metadata:
-  title: Documentatie voor hybride Azure-patronen en -oplossingen
-  description: Meer informatie over hoe u voorbeelden van hybride patronen en oplossingen in uw app-ontwikkeling gebruikt. Azure en Azure Stack maken de ontwikkeling mogelijk van hybride toepassingen die zijn gebouwd in een suite intelligente cloud- en intelligent edge-services.
+  title: Documentatie voor hybride Azure- en multicloudpatronen en -oplossingen
+  description: Meer informatie over het gebruik van hybride en multicloudpatronen en oplossingsvoorbeelden in uw app-ontwikkeling, gebouwd op basis van een suite intelligente cloud en intelligente edge-services.
   ms.service: azure-stack
   ms.topic: landing-page
   author: BryanLa
   ms.author: bryanla
   ms.date: 10/31/2019
-  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
-  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.openlocfilehash: f51256c555011744f847e457b8bac46a1b5c4b14
+  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 06/17/2020
-  ms.locfileid: "84909660"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94872972"
 landingContent:
-- title: Over hybride patronen en oplossingen
+- title: Over hybride en multicloudpatronen en oplossingen
   linkLists:
   - linkListType: overview
     links:
-    - text: Wat zijn voorbeelden van hybride patronen en oplossingen?
+    - text: Wat zijn voorbeelden van patronen en oplossingen?
       url: overview-patterns-solution-examples.md
   - linkListType: concept
     links:
-    - text: Overwegingen bij het ontwerp van hybride apps
+    - text: Overwegingen bij app-ontwerp
       url: overview-app-design-considerations.md
-- title: Hybride patronen ontdekken
+- title: Hybride en multicloudpatronen ontdekken
   linkLists:
   - linkListType: architecture
     links:
-    - text: Schalen door de cloud
+    - text: Schalen in de cloud
       url: pattern-cross-cloud-scale.md
     - text: Hybride CI/CD in DevOps
       url: pattern-cicd-pipeline.md
@@ -38,11 +38,11 @@ landingContent:
       url: pattern-retail-footfall-detection.md
     - text: Geografisch verdeelde app
       url: pattern-geo-distributed.md
-- title: Voorbeelden van hybride oplossingen implementeren
+- title: Hybride en multicloudoplossingsvoorbeelden implementeren
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Schalen door de cloud
+    - text: Schalen in de cloud
       url: solution-deployment-guide-cross-cloud-scaling.md
     - text: Hybride CI/CD in DevOps
       url: https://aka.ms/hybriddevopsdeploy
