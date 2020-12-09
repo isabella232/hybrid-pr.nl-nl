@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
+ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477164"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901487"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Een op AI gebaseerde Footfall-detectie oplossing implementeren met behulp van Azure en Azure Stack hub
 
@@ -26,7 +26,7 @@ In deze oplossing leert u het volgende:
 > - Gebruik de Custom Vision AI dev kit voor de rand.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram hybride pijlers](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack hub is een uitbrei ding van Azure. Azure Stack hub biedt de flexibiliteit en innovatie van Cloud Computing naar uw on-premises omgeving, waardoor u de enige hybride Cloud kunt maken en implementeren.  
 > 
 > In het artikel [hybride overwegingen](overview-app-design-considerations.md) voor het ontwerpen van een app worden de pijlers van de software kwaliteit (plaatsing, schaal baarheid, Beschik baarheid, tolerantie, beheersbaarheid en beveiliging) beoordeeld voor het ontwerpen, implementeren en beheren van hybride apps. De ontwerp overwegingen helpen bij het optimaliseren van het ontwerp van hybride apps, zodat de uitdagingen in productie omgevingen worden geminimaliseerd.
@@ -44,7 +44,7 @@ Voordat u aan de slag gaat met deze implementatie handleiding, moet u het volgen
 - Maak twee service-principals in uw Directory:
   - Eén ingesteld voor gebruik met Azure-resources, met toegang tot het Azure-abonnements bereik.
   - Er is een set ingesteld voor gebruik met Azure Stack hub-resources, met toegang op het Azure Stack hub-abonnements bereik.
-  - Zie [een app-identiteit gebruiken voor toegang tot resources](/azure-stack/operator/azure-stack-create-service-principals.md)voor meer informatie over het maken van service-principals en het autoriseren van de toegang. Als u liever Azure CLI wilt gebruiken, raadpleegt u [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+  - Zie [een app-identiteit gebruiken voor toegang tot resources](/azure-stack/operator/azure-stack-create-service-principals.md)voor meer informatie over het maken van service-principals en het autoriseren van de toegang. Als u liever Azure CLI wilt gebruiken, raadpleegt u [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Implementeer Azure-Cognitive Services in azure of Azure Stack hub.
   - Lees eerst [meer over Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
   - Ga vervolgens naar [Azure stack hub en implementeer Azure Cognitive Services](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) om Cognitive services te implementeren op Azure stack hub. U moet zich eerst aanmelden voor toegang tot de preview-versie.
@@ -56,8 +56,8 @@ Voordat u aan de slag gaat met deze implementatie handleiding, moet u het volgen
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - / [Importeren](https://porter.sh/). U gebruikt importeren om Cloud-apps te implementeren met behulp van CNAB-bundel manifesten die voor u zijn.
   - [Visual Studio Code](https://code.visualstudio.com/)
-  - [Azure IoT-Hulpprogram Ma's voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
-  - [Python-extensie voor Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+  - [Azure IoT-hulpprogramma's voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
+  - [Python-extensie voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
   - [Python](https://www.python.org/)
 
 ## <a name="deploy-the-hybrid-cloud-app"></a>De hybride Cloud-app implementeren
@@ -152,7 +152,7 @@ Gebruik de opdracht regel importeren om een referentieset te genereren en implem
 
 Nu de gegevens naar Azure Stream Analytics van de camera stromen, moeten we deze hand matig autoriseren om te communiceren met Power BI.
 
-1. Open vanuit de Azure Portal **alle resources**en de taak *process-Footfall \[ yoursuffix \] * .
+1. Open vanuit de Azure Portal **alle resources** en de taak *process-Footfall \[ yoursuffix \]* .
 
 2. Selecteer in de sectie **Taaktopologie** van het deelvenster van de Stream Analytics-taak de optie **Uitvoer**.
 
@@ -194,5 +194,5 @@ porter uninstall footfall-camera –tag intelligentedge/footfall-camera-deployme
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [overwegingen voor het ontwerpen van hybride apps]. (overview-app-design-considerations.md)
+- Meer informatie over [overwegingen voor het ontwerpen van hybride apps](overview-app-design-considerations.md)
 - Bekijk en suggereer verbeteringen in [de code voor dit voor beeld op github](https://github.com/Azure-Samples/azure-intelligent-edge-patterns/tree/master/footfall-analysis).

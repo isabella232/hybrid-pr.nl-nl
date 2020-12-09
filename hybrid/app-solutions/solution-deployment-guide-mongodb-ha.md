@@ -7,14 +7,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: def9abaa2a7231648f11453f66119399be015a4d
-ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
+ms.openlocfilehash: 624f032def509d8e42d55807d72176e5fce85910
+ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91852504"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901504"
 ---
-# <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Een Maxi maal beschik bare MongoDB-oplossing implementeren op Azure en Azure Stack hub
+# <a name="deploy-a-highly-available-mongodb-solution-across-two-azure-stack-hub-environments"></a>Een Maxi maal beschik bare MongoDB-oplossing implementeren in twee Azure Stack hub-omgevingen
 
 In dit artikel wordt stapsgewijs geautomatiseerd met een eenvoudige implementatie van een MongoDB-cluster met hoge Beschik baarheid met een nood herstel site (DR) voor twee Azure Stack hub-omgevingen. Zie [leden van replica sets](https://docs.mongodb.com/manual/core/replica-set-members/)voor meer informatie over MongoDb en hoge Beschik baarheid.
 
