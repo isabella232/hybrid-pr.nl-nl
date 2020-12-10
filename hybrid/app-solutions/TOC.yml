@@ -26,6 +26,8 @@
           href: pattern-cross-cloud-scale-onprem-data.md
         - name: Footfall-detectie (retail)
           href: pattern-retail-footfall-detection.md
+        - name: Maximaal beschikbaar Kubernetes-cluster
+          href: pattern-highly-available-kubernetes.md
         - name: Out-of-stock-detectie aan de rand
           href: pattern-out-of-stock-at-edge.md
 - name: Implementatiegidsen voor oplossingen
@@ -40,6 +42,8 @@
       href: solution-deployment-guide-retail-footfall-detection.md
     - name: Geografisch verdeelde app
       href: solution-deployment-guide-geo-distributed.md
+    - name: Maximaal beschikbaar Kubernetes-cluster
+      href: solution-deployment-guide-highly-available-kubernetes.md
     - name: Hybride connectiviteit
       href: solution-deployment-guide-connectivity.md
     - name: Hybride identiteit
