@@ -7,14 +7,14 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2c20d621247ec8e1278feb092586232cc08d5480
-ms.sourcegitcommit: 485a1f97fa1579364e2be1755cadfc5ea89db50e
+ms.openlocfilehash: 0f857515a44ece7f967ade3dee8f493481709851
+ms.sourcegitcommit: c890f2c5e5e5f9f93c921f02dd1a6ca5026d5289
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91852470"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97091799"
 ---
-# <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Een SQL Server 2016-beschikbaarheids groep implementeren op Azure en Azure Stack hub
+# <a name="deploy-a-sql-server-2016-availability-group-across-two-azure-stack-hub-environments"></a>Een SQL Server 2016-beschikbaarheids groep implementeren in twee Azure Stack hub-omgevingen
 
 In dit artikel wordt stapsgewijs een geautomatiseerde implementatie van een basis met hoge Beschik baarheid (HA) SQL Server 2016 Enter prise-cluster met een asynchrone site voor nood herstel (DR) in twee Azure Stack hub-omgevingen. Zie AlwaysOn [Availability groups: een oplossing voor hoge Beschik baarheid en herstel na nood gevallen](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016)voor meer informatie over SQL Server 2016 en hoge Beschik baarheid.
 
