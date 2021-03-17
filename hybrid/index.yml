@@ -10,12 +10,12 @@ metadata:
   author: BryanLa
   ms.author: bryanla
   ms.date: 03/09/2021
-  ms.openlocfilehash: 218f52c27dee54dd4265a9c1eebc6de330bd6154
-  ms.sourcegitcommit: a5851a7351c39249a58da8d0cf121bbf0b306dca
+  ms.openlocfilehash: 59508b4cce80dd3a18a3e36feef6690290e26168
+  ms.sourcegitcommit: 25bfa6f85c1295ecbaf24e812ccebf1b7220bef8
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/10/2021
-  ms.locfileid: "102606190"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103600655"
 highlightedContent:
   items:
   - title: 'Ignite 2021: hybride sessies'
@@ -336,12 +336,16 @@ additionalContent:
       links:
       - url: /learn/modules/align-requirements-in-azure/
         text: Vereisten afstemmen met cloudtypen en servicemodellen in Azure
+      - url: /azure/architecture/browse/?azure_categories=hybrid
+        text: Hybride Azure-architecturen
       - url: https://azure.microsoft.com/overview/azure-hybrid/
         text: Hybride Azure-mogelijkheden
       - url: https://www.youtube.com/playlist?list=PLLasX02E8BPDY8lteNSno4etuLx-6bALf
         text: Hybride virtuele Azure-gebeurtenis
+      - url: /azure/cloud-adoption-framework/scenarios/hybrid/scenario-overview
+        text: Cloud acceptatie Framework-scenario voor hybride en multicloud
       - url: /learn/modules/intro-to-azure-hybrid-services/
-        text: Introductie tot de hybride Azure-cloud
+        text: Inleiding tot de hybride cloudservices van Azure
       - url: https://events.microsoft.com/
         text: Micro soft evenementen catalogus
       - url: /learn
@@ -350,6 +354,10 @@ additionalContent:
       links:
       - url: /learn/modules/azure-sentinel-deploy-configure/
         text: Azure Sentinel implementeren en verbinden met gegevensbronnen
+      - url: /learn/modules/expose-hybrid-services-with-azure-relay/
+        text: Veilig hybride services beschikbaar maken met Azure Relay
+      - url: /learn/modules/implement-manage-hybrid-identity/
+        text: Hybride identiteit implementeren en beheren
       - url: /learn/modules/implement-hybrid-identity-windows-server/
         text: Hybride identiteit implementeren met Windows Server
       - url: /learn/modules/intro-to-azure-sentinel/
@@ -358,16 +366,18 @@ additionalContent:
         text: Hybride cloudbeheer, bewaking en beveiliging met Windows Server
     - title: Beheer
       links:
-      - url: https://github.com/likamrat/azure_arc
+      - url: https://azurearcjumpstart.io/
         text: Azure Arc-snelstartgidsen
-      - url: /learn/modules/describe-high-availability-disaster-recovery-strategies/
-        text: Strategieën voor hoge beschikbaarheid en herstel na noodgevallen
-      - url: /learn/modules/explore-iaas-paas-platform-tools-for-high-availability-disaster-recovery/
-        text: IaaS en PaaS-platformhulpprogramma's voor hoge beschikbaarheid en herstel na noodgevallen
+      - url: /learn/browse/?terms=%22%20Arc%20%22
+        text: Modules van Azure Arc Learn
+      - url: /describe-high-availability-disaster-recovery-strategies/
+        text: Beschrijf strategieën voor hoge Beschik baarheid en herstel na nood gevallen
+      - url: /learn/browse/?terms="disaster%20recovery"
+        text: Modules voor herstel na nood gevallen
+      - url: /learn/browse/?terms="high%20availability"
+        text: Meer informatie over de modules voor hoge Beschik baarheid
       - url: /learn/modules/intro-to-azure-arc/
-        text: Introductie tot Azure Arc
-      - url: /learn/modules/manage-hybrid-workloads-azure-arc/
-        text: Hybride workloads beheren met Azure Arc
+        text: Inleiding tot Azure Arc
       - url: /learn/modules/monitor-windows-server-iaas-virtual-machines-hybrid-instances/
         text: Virtuele Windows Server IaaS-machines en hybride instanties bewaken
       - url: /learn/paths/implement-windows-server-hybrid-cloud-management-monitoring-security/
@@ -388,20 +398,6 @@ additionalContent:
         text: Hybride back-up en herstel implementeren met Windows Server IaaS
   - title: Aanvullende bronnen
     items:
-    - title: Ontwikkelaar
-      links:
-      - url: /azure/developer/
-        text: Azure-ontwikkelaarsdocs en hulpprogramma's
-      - url: /azure/architecture/browse/?azure_categories=hybrid
-        text: Hybride Azure-architecturen
-      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
-        text: Azure IoT-hulpprogramma's voor Visual Studio Code
-      - url: /samples/browse/
-        text: Codevoorbeeldenbrowser
-      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
-        text: Vision AI-ontwikkelaarskit
-      - url: /visualstudio/azure/
-        text: Ontwikkelen in Visual Studio in Azure
     - title: Algemeen
       links:
       - url: https://azure.microsoft.com/blog/topics/hybrid/
@@ -412,7 +408,7 @@ additionalContent:
         text: Azure Stack Hub-oplossingen van klanten
       - url: https://customers.microsoft.com/en-us/search?sq="hybrid cloud"
         text: Verhalen van klanten over de hybride cloud
-    - title: Help en ondersteuning
+    - title: Ondersteuning
       links:
       - url: https://azure.microsoft.com/support/options/
         text: Azure-ondersteuning
@@ -422,3 +418,15 @@ additionalContent:
         text: Microsoft Q&A-forums
       - url: https://stackoverflow.com/
         text: Stack Overflow
+    - title: Technisch
+      links:
+      - url: /azure/developer/
+        text: Azure-ontwikkelaarsdocs en hulpprogramma's
+      - url: https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools
+        text: Azure IoT-hulpprogramma's voor Visual Studio Code
+      - url: /samples/browse/
+        text: Codevoorbeeldenbrowser
+      - url: https://azure.github.io/Vision-AI-DevKit-Pages/
+        text: Vision AI-ontwikkelaarskit
+      - url: /visualstudio/azure/
+        text: Ontwikkelen in Visual Studio in Azure
