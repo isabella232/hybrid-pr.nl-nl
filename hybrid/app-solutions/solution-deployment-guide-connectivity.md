@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 4480f51b03082f2a0cbb7f2f213e05b7bf488646
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477283"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895372"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Hybride Cloud connectiviteit configureren met Azure en Azure Stack hub
 
@@ -25,7 +25,7 @@ In deze oplossing bouwt u een voorbeeld omgeving in voor het volgende:
 > - Onderhoud van een verouderd systeem tijdens het gebruik van implementaties van apps in de Cloud en bronnen in wereld wijd Azure.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram hybride pijlers](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack hub is een uitbrei ding van Azure. Azure Stack hub biedt de flexibiliteit en innovatie van Cloud Computing naar uw on-premises omgeving, waardoor u de enige hybride Cloud kunt maken en implementeren.  
 > 
 > In het artikel [hybride overwegingen](overview-app-design-considerations.md) voor het ontwerpen van een app worden de pijlers van de software kwaliteit (plaatsing, schaal baarheid, Beschik baarheid, tolerantie, beheersbaarheid en beveiliging) beoordeeld voor het ontwerpen, implementeren en beheren van hybride apps. De ontwerp overwegingen helpen bij het optimaliseren van het ontwerp van hybride apps, zodat de uitdagingen in productie omgevingen worden geminimaliseerd.
@@ -36,8 +36,8 @@ Er zijn enkele onderdelen vereist voor het bouwen van een hybride connectiviteit
 
 ### <a name="azure"></a>Azure
 
-- Als u nog geen abonnement voor Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
-- Een [Web-app](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) maken in Azure. Noteer de URL van de web-app, omdat u deze nodig hebt in de oplossing.
+- Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+- Een [Web-app](/aspnet/core/tutorials/publish-to-azure-webapp-using-vs) maken in Azure. Noteer de URL van de web-app, omdat u deze nodig hebt in de oplossing.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -47,9 +47,9 @@ Een Azure OEM/Hardware-partner kan een productie Azure Stack hub implementeren e
    >[!Note]
    >Het implementeren van de ASDK kan tot 7 uur duren. Dit kan daarom worden gepland.
 
-- Implementeer [app service](/azure-stack/operator/azure-stack-app-service-deploy.md) PaaS services op Azure stack hub.
-- [Maak plannen en aanbiedingen](/azure-stack/operator/service-plan-offer-subscription-overview.md) in de Azure stack hub-omgeving.
-- Een [Tenant abonnement maken](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) binnen de Azure stack hub-omgeving.
+- Implementeer [app service](/azure-stack/operator/azure-stack-app-service-deploy) PaaS services op Azure stack hub.
+- [Maak plannen en aanbiedingen](/azure-stack/operator/service-plan-offer-subscription-overview) in de Azure stack hub-omgeving.
+- Een [Tenant abonnement maken](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) binnen de Azure stack hub-omgeving.
 
 ### <a name="azure-stack-hub-components"></a>Azure Stack hub-onderdelen
 
@@ -58,7 +58,7 @@ Een Azure Stack hub-operator moet de App Service implementeren, plannen en aanbi
 In dit voor beeld van een oplossing wordt ervan uitgegaan dat u een eenvoudige kennis van Azure en Azure Stack hub hebt. Lees de volgende artikelen voor meer informatie voordat u de oplossing start:
 
 - [Inleiding tot Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Hoofd concepten van Azure Stack-hub](/azure-stack/operator/azure-stack-overview.md)
+- [Hoofd concepten van Azure Stack-hub](/azure-stack/operator/azure-stack-overview)
 
 ### <a name="before-you-begin"></a>Voordat u begint
 
@@ -80,7 +80,7 @@ Verbindings specificaties:
 - **Azure stack hub-verbindings naam**: AzureStack-gateway-Azure-S2SGateway (de portal zal deze waarde automatisch invullen)
 - **Gedeelde sleutel**: alle compatibele en VPN-hardware, met overeenkomende waarden aan beide zijden van de verbinding
 - **Abonnement**: elk gewenst abonnement
-- **Resource groep**: test-infra structuur
+- **Resource groep**: Test-Infra
 
 IP-adressen van netwerk en subnet:
 
@@ -90,9 +90,9 @@ IP-adressen van netwerk en subnet:
 |  |  | GatewaySubnet<br>10.100.103.0/24 |  |
 | Azure Stack hub vNet | ApplicationvNet<br>10.100.100.0/23 | ApplicationSubnet <br>10.100.100.0/24 |  |
 |  |  | GatewaySubnet <br>10.100101.0/24 |  |
-| Azure Virtual Network-gateway | Azure-gateway |  |  |
-| Azure Stack hub Virtual Network gateway | AzureStack-gateway |  |  |
-| Open bare IP van Azure | Azure-GatewayPublicIP |  | Bepaald bij maken |
+| Azure Virtual Network-gateway | Azure-Gateway |  |  |
+| Azure Stack hub Virtual Network gateway | AzureStack-Gateway |  |  |
+| Openbaar Azure-IP | Azure-GatewayPublicIP |  | Bepaald bij maken |
 | Open bare IP van Azure Stack hub | AzureStack-GatewayPublicIP |  | Bepaald bij maken |
 | Lokale Azure-netwerk gateway | AzureStack-S2SGateway<br>   10.100.100.0/23 |  | Open bare IP-waarde van Azure Stack hub |
 | Lokale netwerk gateway van Azure Stack hub | Azure-S2SGateway<br>10.100.102.0/23 |  | Open bare IP-waarde van Azure |
@@ -108,7 +108,7 @@ Een vNet maken in Azure:
 
 1. Gebruik uw browser om verbinding te maken met de [Azure Portal](https://portal.azure.com/) en u aan te melden met uw Azure-account.
 2. Selecteer **Een resource maken**. In het veld **Marketplace doorzoeken** voert u ' virtueel netwerk ' in. Selecteer **virtueel netwerk** in de resultaten.
-3. Selecteer in de lijst **Selecteer een implementatie model** **Resource Manager**en selecteer vervolgens **maken**.
+3. Selecteer in de lijst **Selecteer een implementatie model** **Resource Manager** en selecteer vervolgens **maken**.
 4. Configureer de VNet-instellingen op het **virtuele netwerk maken**. De vereiste veld namen worden voorafgegaan door een rood sterretje.  Wanneer u een geldige waarde opgeeft, wordt het sterretje gewijzigd in een groen vinkje.
 
 Een vNet maken in Azure Stack hub:
@@ -122,7 +122,7 @@ Voordat u het virtuele netwerk verbindt met een gateway, moet u het gateway-subn
 Navigeer in het [Azure Portal](https://portal.azure.com/)naar het virtuele netwerk van Resource Manager waar u een virtuele netwerk gateway wilt maken.
 
 1. Selecteer het vNet om de pagina **Virtual Network** te openen.
-2. Selecteer in **instellingen**de optie **subnetten**.
+2. Selecteer in **instellingen** de optie **subnetten**.
 3. Selecteer op de pagina **subnetten** **+ Gateway-subnet** om de pagina **subnet toevoegen** te openen.
 
     ![Gateway-subnet toevoegen](media/solution-deployment-guide-connectivity/image4.png)
@@ -137,14 +137,14 @@ Gebruik de volgende stappen voor het maken van een virtuele netwerk gateway in A
 1. Klik aan de linkerkant van de portal pagina **+** en voer ' virtuele netwerk gateway ' in het zoek veld in.
 2. Selecteer in **resultaten** **virtuele netwerk gateway**.
 3. Selecteer in **virtuele netwerk gateway** **maken** om de pagina **virtuele netwerk gateway maken** te openen.
-4. Geef bij **virtuele netwerk gateway maken**de waarden op voor uw netwerk gateway met behulp van de **voorbeeld waarden van de zelf studie**. Neem de volgende aanvullende waarden op:
+4. Geef bij **virtuele netwerk gateway maken** de waarden op voor uw netwerk gateway met behulp van de **voorbeeld waarden van de zelf studie**. Neem de volgende aanvullende waarden op:
 
    - **SKU**: basis
    - **Virtual Network**: Selecteer het virtuele netwerk dat u eerder hebt gemaakt. Het gateway-subnet dat u hebt gemaakt, wordt automatisch geselecteerd.
    - **Eerste IP-configuratie**: het open bare IP-adres van uw gateway.
      - Selecteer **IP-configuratie voor de gateway maken**. Hiermee gaat u naar de pagina **openbaar IP-adres kiezen** .
      - Selecteer **+ nieuwe maken** om de pagina **openbaar IP-adres maken** te openen.
-     - Voer een **naam** in voor uw open bare IP-adres. Verlaat de SKU als **basis**en selecteer **OK** om uw wijzigingen op te slaan.
+     - Voer een **naam** in voor uw open bare IP-adres. Verlaat de SKU als **basis** en selecteer **OK** om uw wijzigingen op te slaan.
 
        > [!Note]
        > Momenteel ondersteunt VPN Gateway alleen dynamische toewijzing van open bare IP-adressen. Dit betekent echter niet dat het IP-adres verandert nadat het aan uw VPN-gateway is toegewezen. De enige keer dat het open bare IP-adres wordt gewijzigd wanneer de gateway wordt verwijderd en opnieuw wordt gemaakt. Het wijzigen van het formaat, het opnieuw instellen of andere interne onderhouds-en upgrade-instellingen voor uw VPN-gateway veranderen het IP-adres niet.
@@ -170,9 +170,9 @@ De lokale netwerkgateway verwijst doorgaans naar uw on-premises locatie. U geeft
   >Als uw on-premises netwerk wordt gewijzigd of als u het open bare IP-adres voor het VPN-apparaat wilt wijzigen, kunt u deze waarden later bijwerken.
 
 1. Selecteer in de portal **+Een resource maken**.
-2. Voer in het zoekvak **lokale netwerk gateway**in en selecteer vervolgens **Enter** om te zoeken. Er wordt een lijst met resultaten weer gegeven.
-3. Selecteer **lokale netwerk gateway**en selecteer vervolgens **maken** om de pagina **lokale netwerk gateway maken** te openen.
-4. In **lokale netwerk gateway maken**geeft u de waarden voor uw lokale netwerk gateway op met behulp van de **voorbeeld waarden van de zelf studie**. Neem de volgende aanvullende waarden op:
+2. Voer in het zoekvak **lokale netwerk gateway** in en selecteer vervolgens **Enter** om te zoeken. Er wordt een lijst met resultaten weer gegeven.
+3. Selecteer **lokale netwerk gateway** en selecteer vervolgens **maken** om de pagina **lokale netwerk gateway maken** te openen.
+4. In **lokale netwerk gateway maken** geeft u de waarden voor uw lokale netwerk gateway op met behulp van de **voorbeeld waarden van de zelf studie**. Neem de volgende aanvullende waarden op:
 
     - **IP-adres**: het open bare IP-adres van het VPN-apparaat waarvan u Azure of Azure stack hub verbinding wilt laten maken. Geef een geldig openbaar IP-adres op dat zich niet achter een NAT bevindt, zodat Azure het adres kan bereiken. Als u het IP-adres momenteel niet hebt, kunt u een waarde uit het voor beeld gebruiken als tijdelijke aanduiding. U moet terugkeren en de tijdelijke aanduiding vervangen door het open bare IP-adres van uw VPN-apparaat. Azure kan pas verbinding maken met het apparaat als u een geldig adres opgeeft.
     - **Adres ruimte**: het adres bereik voor het netwerk dat door dit lokale netwerk wordt vertegenwoordigd. U kunt meerdere adresruimtebereiken toevoegen. Zorg ervoor dat de door u opgegeven bereiken elkaar niet overlappen met bereiken van andere netwerken waarmee u verbinding wilt maken. Azure stuurt het adresbereik dat u opgeeft, door naar het IP-adres van het on-premises VPN-apparaat. Gebruik uw eigen waarden als u verbinding wilt maken met uw on-premises site, geen voorbeeld waarde.
@@ -195,8 +195,8 @@ Gebruik de volgende stappen om een site-naar-site-VPN-verbinding te maken tussen
 1. Selecteer in het Azure Portal **+ een resource maken**.
 2. Zoeken naar **verbindingen**.
 3. Selecteer in **resultaten** **verbindingen**.
-4. Selecteer bij **verbinding**de optie **maken**.
-5. Configureer bij **verbinding maken**de volgende instellingen:
+4. Selecteer bij **verbinding** de optie **maken**.
+5. Configureer bij **verbinding maken** de volgende instellingen:
 
     - **Verbindings type**: Selecteer site-naar-site (IPSec).
     - **Resource groep**: Selecteer de resource groep testen.
@@ -204,11 +204,11 @@ Gebruik de volgende stappen om een site-naar-site-VPN-verbinding te maken tussen
     - **Lokale netwerk gateway**: Selecteer de lokale netwerk gateway die u hebt gemaakt.
     - **Verbindings naam**: deze naam wordt automatisch ingevuld met behulp van de waarden van de twee gateways.
     - **Gedeelde sleutel**: deze waarde moet overeenkomen met de waarde die u gebruikt voor uw lokale on-PREMISES VPN-apparaat. In het voor beeld van de zelf studie wordt gebruikgemaakt van ' abc123 ', maar u moet een complexere waarde gebruiken. Het belangrijkste is dat deze waarde *moet* overeenkomen met de waarde die u opgeeft bij het configureren van uw VPN-apparaat.
-    - De waarden voor het **abonnement**, de **resource groep**en de **locatie** zijn vast.
+    - De waarden voor het **abonnement**, de **resource groep** en de **locatie** zijn vast.
 
 6. Selecteer **OK** om uw verbinding te maken.
 
-U kunt de verbinding zien op de pagina **verbindingen** van de gateway van het virtuele netwerk. De status gaat van *onbekend* naar *verbinding maken*en vervolgens naar *geslaagd*.
+U kunt de verbinding zien op de pagina **verbindingen** van de gateway van het virtuele netwerk. De status gaat van *onbekend* naar *verbinding maken* en vervolgens naar *geslaagd*.
 
 ## <a name="next-steps"></a>Volgende stappen
 

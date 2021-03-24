@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: ed2ad5bed8f4bd80d4a40ab7600842d5544ff97d
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886812"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895411"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Een app implementeren waarmee u meerdere clouds schaalt met behulp van Azure en Azure Stack hub
 
@@ -30,7 +30,7 @@ In deze oplossing bouwt u een voorbeeld omgeving in voor het volgende:
 > - Meer informatie over het bewaken en bijhouden van uw implementaties.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![diagram hybride pijlers](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack hub is een uitbrei ding van Azure. Azure Stack hub biedt de flexibiliteit en innovatie van Cloud Computing naar uw on-premises omgeving, waardoor u de enige hybride Cloud kunt gebruiken waarmee u overal hybride apps bouwt en implementeert.  
 > 
 > In het artikel [hybride overwegingen](overview-app-design-considerations.md) voor het ontwerpen van een app worden de pijlers van de software kwaliteit (plaatsing, schaal baarheid, Beschik baarheid, tolerantie, beheersbaarheid en beveiliging) beoordeeld voor het ontwerpen, implementeren en beheren van hybride apps. De ontwerp overwegingen helpen bij het optimaliseren van het ontwerp van hybride apps, zodat de uitdagingen in productie omgevingen worden geminimaliseerd.
@@ -39,16 +39,16 @@ In deze oplossing bouwt u een voorbeeld omgeving in voor het volgende:
 
 - Azure-abonnement. Maak, indien nodig, een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 - Een Azure Stack hub geïntegreerd systeem of implementatie van Azure Stack Development Kit (ASDK).
-  - Zie [install the ASDK](/azure-stack/asdk/asdk-install.md)(Engelstalig) voor instructies over het installeren van Azure stack hub.
+  - Zie [install the ASDK](/azure-stack/asdk/asdk-install)(Engelstalig) voor instructies over het installeren van Azure stack hub.
   - Voor een ASDK-automatiserings script na de implementatie gaat u naar: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Het volt ooien van deze installatie kan enkele uren in beslag nemen.
-- Implementeer [app service](/azure-stack/operator/azure-stack-app-service-deploy.md) PaaS services op Azure stack hub.
-- [Maak plannen/aanbiedingen](/azure-stack/operator/service-plan-offer-subscription-overview.md) binnen de Azure stack hub-omgeving.
-- Een [Tenant abonnement maken](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) binnen de Azure stack hub-omgeving.
+- Implementeer [app service](/azure-stack/operator/azure-stack-app-service-deploy) PaaS services op Azure stack hub.
+- [Maak plannen/aanbiedingen](/azure-stack/operator/service-plan-offer-subscription-overview) binnen de Azure stack hub-omgeving.
+- Een [Tenant abonnement maken](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) binnen de Azure stack hub-omgeving.
 - Een web-app maken binnen het Tenant abonnement. Noteer de URL van de nieuwe web-app voor later gebruik.
 - Implementeer Azure pipelines virtual machine (VM) binnen het Tenant abonnement.
 - VM van Windows Server 2016 met .NET 3,5 is vereist. Deze VM wordt gebouwd in het Tenant abonnement op Azure Stack hub als de Private build agent.
-- [Windows Server 2016 met SQL 2017 VM-installatie kopie](/azure-stack/operator/azure-stack-add-vm-image.md) is beschikbaar op de Azure stack hub Marketplace. Als deze installatie kopie niet beschikbaar is, werkt u met een Azure Stack hub-operator om te controleren of deze is toegevoegd aan de omgeving.
+- [Windows Server 2016 met SQL 2017 VM-installatie kopie](/azure-stack/operator/azure-stack-add-vm-image) is beschikbaar op de Azure stack hub Marketplace. Als deze installatie kopie niet beschikbaar is, werkt u met een Azure Stack hub-operator om te controleren of deze is toegevoegd aan de omgeving.
 
 ## <a name="issues-and-considerations"></a>Problemen en overwegingen
 
@@ -79,7 +79,7 @@ Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom
 Stel hybride continue integratie en continue implementatie (CI/CD) in voor het implementeren van web-apps naar Azure en Azure Stack hub en voor het autopushen van wijzigingen in beide Clouds.
 
 > [!Note]  
-> Azure Stack hub met de juiste installatie kopieën die zijn syndicated om te worden uitgevoerd (Windows Server en SQL) en App Service implementatie is vereist. Raadpleeg de App Service documentatie [vereisten voor het implementeren van app service op Azure stack hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md)voor meer informatie.
+> Azure Stack hub met de juiste installatie kopieën die zijn syndicated om te worden uitgevoerd (Windows Server en SQL) en App Service implementatie is vereist. Raadpleeg de App Service documentatie [vereisten voor het implementeren van app service op Azure stack hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started)voor meer informatie.
 
 ### <a name="add-code-to-azure-repos"></a>Code toevoegen aan Azure opslag plaatsen
 
@@ -133,7 +133,7 @@ Azure-pijp lijnen en Azure DevOps services bieden een zeer Configureer bare en b
 
    ![Azure App Service implementatie sjabloon Toep assen](meDia/solution-deployment-guide-cross-cloud-scaling/image6.png)
 
-3. Voeg onder **artefact toevoegen**het artefact toe voor de Azure Cloud build-app.
+3. Voeg onder **artefact toevoegen** het artefact toe voor de Azure Cloud build-app.
 
    ![Artefact toevoegen aan Azure Cloud build](media/solution-deployment-guide-cross-cloud-scaling/image7.png)
 
@@ -145,7 +145,7 @@ Azure-pijp lijnen en Azure DevOps services bieden een zeer Configureer bare en b
 
       ![Azure-abonnement voor Azure-Cloud eindpunt selecteren](media/solution-deployment-guide-cross-cloud-scaling/image9.png)
 
-6. Stel onder **app service name**de vereiste Azure app service-naam in.
+6. Stel onder **app service name** de vereiste Azure app service-naam in.
 
       ![Azure app service-naam instellen](media/solution-deployment-guide-cross-cloud-scaling/image10.png)
 
@@ -153,11 +153,11 @@ Azure-pijp lijnen en Azure DevOps services bieden een zeer Configureer bare en b
 
       ![Agent wachtrij instellen voor gehoste Azure-cloud omgeving](media/solution-deployment-guide-cross-cloud-scaling/image11.png)
 
-8. Selecteer in het menu implementeren Azure App Service het geldige **pakket of** de juiste map voor de omgeving. Selecteer **OK** om **de maplocatie te**selecteren.
+8. Selecteer in het menu implementeren Azure App Service het geldige **pakket of** de juiste map voor de omgeving. Selecteer **OK** om **de maplocatie te** selecteren.
   
       ![Pakket of map voor Azure App Service omgeving selecteren](media/solution-deployment-guide-cross-cloud-scaling/image12.png)
 
-      ![Pakket of map voor Azure App Service omgeving selecteren](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
+      ![Dialoog venster voor het kiezen van mappen 1](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
 
 9. Sla alle wijzigingen op en ga terug naar de **release pijplijn**.
 
@@ -194,9 +194,9 @@ Azure-pijp lijnen en Azure DevOps services bieden een zeer Configureer bare en b
 
     ![Selecteer een map voor Azure App Service implementatie](media/solution-deployment-guide-cross-cloud-scaling/image22.png)
 
-    ![Selecteer een map voor Azure App Service implementatie](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
+    ![Dialoog venster voor het kiezen van mappen 2](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
 
-18. Onder variabele tabblad voegt u een variabele `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` met de naam in, stelt u de waarde in op **True**en bereik Azure stack.
+18. Onder variabele tabblad voegt u een variabele `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` met de naam in, stelt u de waarde in op **True** en bereik Azure stack.
 
     ![Variabele toevoegen aan Azure-app-implementatie](media/solution-deployment-guide-cross-cloud-scaling/image24.png)
 
@@ -211,7 +211,7 @@ Azure-pijp lijnen en Azure DevOps services bieden een zeer Configureer bare en b
 21. Sla alle wijzigingen op.
 
 > [!Note]  
-> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
+> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publiceren naar Azure Stack hub via Visual Studio
 
@@ -219,21 +219,21 @@ Door eind punten te maken, kunt u met een Azure DevOps Services-build Azure-serv
 
 1. Meld u aan bij Azure DevOps Services en ga naar de pagina app-instellingen.
 
-2. Selecteer bij **instellingen**de optie **beveiliging**.
+2. Selecteer bij **instellingen** de optie **beveiliging**.
 
-3. Selecteer in **VSTS-groepen**de optie **endpoint Crea tors**.
+3. Selecteer in **VSTS-groepen** de optie **endpoint Crea tors**.
 
-4. Selecteer **toevoegen**op het tabblad **leden** .
+4. Selecteer **toevoegen** op het tabblad **leden** .
 
-5. In **gebruikers en groepen toevoegen**voert u een gebruikers naam in en selecteert u deze gebruiker in de lijst met gebruikers.
+5. In **gebruikers en groepen toevoegen** voert u een gebruikers naam in en selecteert u deze gebruiker in de lijst met gebruikers.
 
 6. Selecteer **Save changes**.
 
 7. Selecteer in de lijst **VSTS groepen** de optie **endpoint Administrators**.
 
-8. Selecteer **toevoegen**op het tabblad **leden** .
+8. Selecteer **toevoegen** op het tabblad **leden** .
 
-9. In **gebruikers en groepen toevoegen**voert u een gebruikers naam in en selecteert u deze gebruiker in de lijst met gebruikers.
+9. In **gebruikers en groepen toevoegen** voert u een gebruikers naam in en selecteert u deze gebruiker in de lijst met gebruikers.
 
 10. Selecteer **Save changes**.
 
@@ -242,7 +242,7 @@ Nu de gegevens van het eind punt bestaan, zijn de Azure-pijp lijnen naar Azure S
 ## <a name="develop-the-app-build"></a>De app-build ontwikkelen
 
 > [!Note]  
-> Azure Stack hub met de juiste installatie kopieën die zijn syndicated om te worden uitgevoerd (Windows Server en SQL) en App Service implementatie is vereist. Zie [vereisten voor het implementeren van app service op Azure stack hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md)voor meer informatie.
+> Azure Stack hub met de juiste installatie kopieën die zijn syndicated om te worden uitgevoerd (Windows Server en SQL) en App Service implementatie is vereist. Zie [vereisten voor het implementeren van app service op Azure stack hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started)voor meer informatie.
 
 Gebruik [Azure Resource Manager sjablonen](https://azure.microsoft.com/resources/templates/) zoals web-app-code van Azure opslag plaatsen om te implementeren op beide Clouds.
 
@@ -286,50 +286,50 @@ Het maken van een release definitie is de laatste stap in het app-bouw proces. D
 
 2. Op het tabblad **releases** selecteert u **[+]** en kiest u **release definitie maken**.
 
-3. Kies bij **een sjabloon selecteren de**optie **Azure app service-implementatie**en selecteer vervolgens **Toep assen**.
+3. Kies bij **een sjabloon selecteren de** optie **Azure app service-implementatie** en selecteer vervolgens **Toep assen**.
 
-4. Selecteer op **artefact toevoegen**van de **bron (build-definitie)** de Azure Cloud build-app.
+4. Selecteer op **artefact toevoegen** van de **bron (build-definitie)** de Azure Cloud build-app.
 
 5. Op het tabblad **pijp lijn** selecteert u de koppeling **1 fase**, **1 taak** om **omgevings taken weer te geven**.
 
-6. Op het tabblad **taken** voert u Azure in als de naam van de **omgeving** en selecteert u in de lijst met **Azure-abonnementen** de Cloud handelaren-Web EP.
+6. Voer op het tabblad **taken** Azure in als de **omgevings naam** en selecteer de Cloud Traders-Web EP in de lijst met **Azure-abonnementen** .
 
 7. Voer de naam in van de **Azure app service**, die zich `northwindtraders` in de volgende scherm opname bevindt.
 
 8. Voor de agent fase selecteert u **gehoste VS2017** in de lijst **agent wachtrij** .
 
-9. In **implementatie Azure app service**selecteert u het geldige **pakket of** de juiste map voor de omgeving.
+9. In **implementatie Azure app service** selecteert u het geldige **pakket of** de juiste map voor de omgeving.
 
-10. Selecteer in **bestand of map selecteren**de optie **OK** naar **locatie**.
+10. Selecteer in **bestand of map selecteren** de optie **OK** naar **locatie**.
 
 11. Sla alle wijzigingen op en ga terug naar de **pijp lijn**.
 
-12. Selecteer op het tabblad **pijp lijn** de optie **artefact toevoegen**en kies het **NorthwindCloud handelaren-vat** in de lijst **bron (build Definition)** .
+12. Selecteer op het tabblad **pijp lijn** de optie **artefact toevoegen** en kies het **NorthwindCloud handelaren-vat** in de lijst **bron (build Definition)** .
 
 13. Voeg een andere omgeving toe aan **een sjabloon selecteren**. Kies **Azure app service-implementatie** en selecteer vervolgens **Toep assen**.
 
-14. Voer `Azure Stack Hub` in als de **naam**van de omgeving.
+14. Voer `Azure Stack Hub` in als de **naam** van de omgeving.
 
 15. Zoek en selecteer op het tabblad **taken** Azure stack hub.
 
-16. Selecteer in de lijst met **Azure-abonnementen** **AzureStack handelaren-vaartuigen EP** voor het eind punt van de Azure stack hub.
+16. Selecteer in de lijst met **Azure-abonnementen** **AzureStack Traders-Vessel EP** voor het Azure stack hub-eind punt.
 
 17. Voer de naam van de Azure Stack hub-web-app in als de naam van de **app service**.
 
-18. Onder **selectie van agent**kiest u **AzureStack-b Douglas-FIR** in de lijst **agent wachtrij** .
+18. Onder **selectie van agent** kiest u **AzureStack-b Douglas-FIR** in de lijst **agent wachtrij** .
 
-19. Voor **implementatie Azure app service**selecteert u het geldige **pakket of** de juiste map voor de omgeving. Selecteer in **bestand of map selecteren**de optie **OK** voor de **locatie**van de map.
+19. Voor **implementatie Azure app service** selecteert u het geldige **pakket of** de juiste map voor de omgeving. Selecteer in **bestand of map selecteren** de optie **OK** voor de **locatie** van de map.
 
-20. Zoek op het tabblad **variabele** de variabele met de naam `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` . Stel de waarde van de variabele in op **waar**en stel het bereik in op **Azure stack hub**.
+20. Zoek op het tabblad **variabele** de variabele met de naam `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` . Stel de waarde van de variabele in op **waar** en stel het bereik in op **Azure stack hub**.
 
-21. Op het tabblad **pijp lijn** selecteert u het **trigger pictogram continue implementatie** voor de NorthwindCloud handelaren-webartefacten en stelt u de **trigger voor continue implementatie** in op **ingeschakeld**. Doe hetzelfde voor het **NorthwindCloud-scheeps-** artefact.
+21. Op het tabblad **pijp lijn** selecteert u het **trigger pictogram continue implementatie** voor de NorthwindCloud-Traders-Web artefact en stelt u de **trigger voor continue implementatie** in op **ingeschakeld**. Doe hetzelfde voor het **NorthwindCloud-scheeps-** artefact.
 
 22. Selecteer voor de Azure Stack hub-omgeving het pictogram **voor waarden voorafgaand aan implementatie** de trigger instellen op **na release**.
 
 23. Sla alle wijzigingen op.
 
 > [!Note]  
-> Sommige instellingen voor release taken worden automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen, maar kunnen worden gewijzigd in de bovenliggende omgevings items.
+> Sommige instellingen voor release taken worden automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen, maar kunnen worden gewijzigd in de bovenliggende omgevings items.
 
 ## <a name="create-a-release"></a>Een release maken
 

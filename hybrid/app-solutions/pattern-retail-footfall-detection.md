@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 0bf07bb38537f530a0adb3569c43d53af13b8d56
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910468"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895326"
 ---
 # <a name="footfall-detection-pattern"></a>Footfall-detectie patroon
 
@@ -50,8 +50,8 @@ Deze oplossing maakt gebruik van de volgende onderdelen:
 | Azure | [Azure Event Hubs](/azure/event-hubs/) | Azure Event Hubs biedt een schaalbaar platform voor het opnemen van geanonimiseerd-gegevens die netjes worden geïntegreerd met Azure Stream Analytics. |
 |  | [Azure Stream Analytics](/azure/stream-analytics/) | Een Azure Stream Analytics taak aggregeert de geanonimiseerd-gegevens en groepeert deze in 15-Second Windows voor visualisatie. |
 |  | [Microsoft Power BI](https://powerbi.microsoft.com/) | Power BI biedt een gebruiks vriendelijke dash board-interface voor het weer geven van de uitvoer van Azure Stream Analytics. |
-| Azure Stack hub | [App Service](/azure-stack/operator/azure-stack-app-service-overview.md) | De App Service Resource provider (RP) biedt een basis voor Edge-onderdelen, waaronder hosting-en beheer functies voor web-apps/Api's en functies. |
-| | Azure Kubernetes service [(AKS) engine-](https://github.com/Azure/aks-engine) cluster | De AKS RP met AKS-engine-cluster dat is geïmplementeerd in Azure Stack hub biedt een schaal bare, robuuste engine voor het uitvoeren van de Face-API-container. |
+| Azure Stack Hub | [App Service](/azure-stack/operator/azure-stack-app-service-overview) | De App Service Resource provider (RP) biedt een basis voor Edge-onderdelen, waaronder hosting-en beheer functies voor web-apps/Api's en functies. |
+| | Azure Kubernetes service [(AKS) engine-](https://github.com/Azure/aks-engine) cluster | De AKS RP met AKS-Engine cluster dat is geïmplementeerd in Azure Stack hub biedt een schaal bare, robuuste engine voor het uitvoeren van de Face-API-container. |
 | | Azure Cognitive Services [Face-API-containers](/azure/cognitive-services/face/face-how-to-install-containers)| De Azure Cognitive Services RP met Face-API-containers biedt demografische, Emotion en unieke detectie van bezoekers op het particuliere netwerk van contoso. |
 | | Blob Storage | Installatie kopieën die zijn vastgelegd in de AI dev kit, worden geüpload naar de Blob-opslag van Azure Stack hub. |
 | | Azure Functions | Een Azure-functie die wordt uitgevoerd op Azure Stack hub ontvangt invoer van Blob Storage en beheert de interacties met de Face-API. Het verzendt geanonimiseerd-gegevens naar een Event Hubs-cluster dat zich in azure bevindt.<br><br>|

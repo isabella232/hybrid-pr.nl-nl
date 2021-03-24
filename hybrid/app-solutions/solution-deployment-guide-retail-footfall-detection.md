@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: caedbd4758b9ae8c93cf9bb625ed9aac68bfa196
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901487"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895359"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Een op AI gebaseerde Footfall-detectie oplossing implementeren met behulp van Azure en Azure Stack hub
 
@@ -37,22 +37,22 @@ Voordat u aan de slag gaat met deze implementatie handleiding, moet u het volgen
 
 - Bekijk het onderwerp [Footfall-detectie patroon](pattern-retail-footfall-detection.md) .
 - Gebruikers toegang verkrijgen tot een met Azure Stack Development Kit (ASDK) of Azure Stack hub geïntegreerde systeem instantie, met:
-  - De [Azure app service op Azure stack hub-resource provider](/azure-stack/operator/azure-stack-app-service-overview.md) geïnstalleerd. U hebt operator toegang tot uw Azure Stack hub-exemplaar nodig of u kunt samen werken met de beheerder om deze te installeren.
+  - De [Azure app service op Azure stack hub-resource provider](/azure-stack/operator/azure-stack-app-service-overview) geïnstalleerd. U hebt operator toegang tot uw Azure Stack hub-exemplaar nodig of u kunt samen werken met de beheerder om deze te installeren.
   - Een abonnement op een aanbieding die App Service en opslag limiet biedt. U hebt operator toegang nodig om een aanbieding te maken.
 - Toegang verkrijgen tot een Azure-abonnement.
   - Als u nog geen abonnement op Azure hebt, Meld u dan aan voor een [gratis proef account](https://azure.microsoft.com/free/) voordat u begint.
 - Maak twee service-principals in uw Directory:
   - Eén ingesteld voor gebruik met Azure-resources, met toegang tot het Azure-abonnements bereik.
   - Er is een set ingesteld voor gebruik met Azure Stack hub-resources, met toegang op het Azure Stack hub-abonnements bereik.
-  - Zie [een app-identiteit gebruiken voor toegang tot resources](/azure-stack/operator/azure-stack-create-service-principals.md)voor meer informatie over het maken van service-principals en het autoriseren van de toegang. Als u liever Azure CLI wilt gebruiken, raadpleegt u [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
+  - Zie [een app-identiteit gebruiken voor toegang tot resources](/azure-stack/operator/azure-stack-create-service-principals)voor meer informatie over het maken van service-principals en het autoriseren van de toegang. Als u liever Azure CLI wilt gebruiken, raadpleegt u [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Implementeer Azure-Cognitive Services in azure of Azure Stack hub.
   - Lees eerst [meer over Cognitive Services](https://azure.microsoft.com/services/cognitive-services/).
-  - Ga vervolgens naar [Azure stack hub en implementeer Azure Cognitive Services](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) om Cognitive services te implementeren op Azure stack hub. U moet zich eerst aanmelden voor toegang tot de preview-versie.
+  - Ga vervolgens naar [Azure stack hub en implementeer Azure Cognitive Services](/azure-stack/user/azure-stack-solution-template-cognitive-services) om Cognitive services te implementeren op Azure stack hub. U moet zich eerst aanmelden voor toegang tot de preview-versie.
 - Een niet-geconfigureerde Azure Custom Vision AI dev kit klonen of downloaden. Zie de [Vision AI DevKit](https://azure.github.io/Vision-AI-DevKit-Pages/)voor meer informatie.
 - Meld u aan voor een Power BI-account.
 - Een Azure Cognitive Services Face-API-abonnements sleutel en eind punt-URL. U kunt beide met de gratis proef versie van [Cognitive Services uitproberen](https://azure.microsoft.com/try/cognitive-services/?api=face-api) . Of volg de instructies in [Create a cognitive Services account](/azure/cognitive-services/cognitive-services-apis-create-account).
 - Installeer de volgende ontwikkelings bronnen:
-  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
+  - [Azure CLI 2.0](/azure-stack/user/azure-stack-version-profiles-azurecli2)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - / [Importeren](https://porter.sh/). U gebruikt importeren om Cloud-apps te implementeren met behulp van CNAB-bundel manifesten die voor u zijn.
   - [Visual Studio Code](https://code.visualstudio.com/)

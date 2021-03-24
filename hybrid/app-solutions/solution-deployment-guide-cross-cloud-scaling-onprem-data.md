@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
-ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
+ms.openlocfilehash: 0989859fd68847932d3e69defee59740a2bffd44
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92353475"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895394"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Implementeer hybride app met on-premises gegevens die meerdere clouds schalen
 
@@ -47,7 +47,7 @@ Deze zelfstudie bestaat uit de volgende taken:
 In deze zelf studie wordt ervan uitgegaan dat u een basis kennis hebt van wereld wijd Azure en Azure Stack hub. Als u meer informatie wilt over het starten van de zelf studie, raadpleegt u de volgende artikelen:
 
 - [Inleiding tot Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Hoofd concepten van Azure Stack-hub](/azure-stack/operator/azure-stack-overview.md)
+- [Hoofd concepten van Azure Stack-hub](/azure-stack/operator/azure-stack-overview)
 
 In deze zelf studie wordt ervan uitgegaan dat u een Azure-abonnement hebt. Als u nog geen abonnement hebt, [maakt u een gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
@@ -55,7 +55,7 @@ In deze zelf studie wordt ervan uitgegaan dat u een Azure-abonnement hebt. Als u
 
 Controleer voordat u met deze oplossing begint of u aan de volgende vereisten voldoet:
 
-- Een Azure Stack Development Kit (ASDK) of een abonnement op een met Azure Stack hub geïntegreerd systeem. Als u de ASDK wilt implementeren, volgt u de instructies in [de ASDK implementeren met behulp van het installatie programma](/azure-stack/asdk/asdk-install.md).
+- Een Azure Stack Development Kit (ASDK) of een abonnement op een met Azure Stack hub geïntegreerd systeem. Als u de ASDK wilt implementeren, volgt u de instructies in [de ASDK implementeren met behulp van het installatie programma](/azure-stack/asdk/asdk-install).
 - Voor de installatie van de Azure Stack hub moet het volgende zijn geïnstalleerd:
   - Het Azure App Service. Werk samen met uw Azure Stack hub-operator om de Azure App Service te implementeren en te configureren in uw omgeving. In deze zelf studie moet het App Service ten minste één (1) beschik bare toegewezen werk rollen hebben.
   - Een installatie kopie van Windows Server 2016.
@@ -72,23 +72,23 @@ Controleer voordat u met deze oplossing begint of u aan de volgende vereisten vo
 
 1. Meld u aan bij de gebruikers portal van de Azure Stack hub.
 
-2. Selecteer **Marketplace**in het **dash board**.
+2. Selecteer **Marketplace** in het **dash board**.
 
     ![Azure Stack hub Marketplace](media/solution-deployment-guide-hybrid/image1.png)
 
-3. Selecteer **Compute**in **Marketplace**en kies vervolgens **meer**. Selecteer onder **meer**de **gratis licentie voor SQL Server: SQL Server 2017 Developer op Windows Server** -installatie kopie.
+3. Selecteer **Compute** in **Marketplace** en kies vervolgens **meer**. Selecteer onder **meer** de **gratis licentie voor SQL Server: SQL Server 2017 Developer op Windows Server** -installatie kopie.
 
     ![Een installatie kopie van een virtuele machine in Azure Stack hub-gebruikers Portal selecteren](media/solution-deployment-guide-hybrid/image2.png)
 
-4. Selecteer in **gratis SQL Server licentie: SQL Server 2017 Developer op Windows Server**de optie **maken**.
+4. Selecteer in **gratis SQL Server licentie: SQL Server 2017 Developer op Windows Server** de optie **maken**.
 
-5. Geef bij **basis beginselen > basis instellingen configureren**een **naam** op voor de virtuele machine (VM), een **gebruikers naam** voor de SQL Server SA en een **wacht woord** voor de SA.  Selecteer in de vervolg keuzelijst **abonnement** het abonnement dat u implementeert. Gebruik voor **resource groep**de **optie bestaande** en plaats de virtuele machine in dezelfde Resource groep als uw Azure stack hub-web-app.
+5. Geef bij **basis beginselen > basis instellingen configureren** een **naam** op voor de virtuele machine (VM), een **gebruikers naam** voor de SQL Server SA en een **wacht woord** voor de SA.  Selecteer in de vervolg keuzelijst **abonnement** het abonnement dat u implementeert. Gebruik voor **resource groep** de **optie bestaande** en plaats de virtuele machine in dezelfde Resource groep als uw Azure stack hub-web-app.
 
     ![Basis instellingen configureren voor virtuele machines in Azure Stack hub-gebruikers Portal](media/solution-deployment-guide-hybrid/image3.png)
 
-6. Kies onder **grootte**een grootte voor de virtuele machine. Voor deze zelf studie raden wij u aan A2_Standard of een DS2_V2_Standard.
+6. Kies onder **grootte** een grootte voor de virtuele machine. Voor deze zelf studie raden wij u aan A2_Standard of een DS2_V2_Standard.
 
-7. Configureer onder **instellingen > optionele functies configureren**de volgende instellingen:
+7. Configureer onder **instellingen > optionele functies configureren** de volgende instellingen:
 
    - **Opslag account**: Maak een nieuw account als u er een hebt.
    - **Virtueel netwerk**:
@@ -104,11 +104,11 @@ Controleer voordat u met deze oplossing begint of u aan de volgende vereisten vo
 
      ![Optionele VM-functies configureren in Azure Stack hub-gebruikers Portal](media/solution-deployment-guide-hybrid/image4.png)
 
-8. Configureer onder **SQL Server instellingen**de volgende instellingen:
+8. Configureer onder **SQL Server instellingen** de volgende instellingen:
 
    - Selecteer voor **SQL**-connectiviteit **openbaar (Internet)**.
    - Voor **poort**, behoud de standaard waarde van **1433**.
-   - Selecteer **inschakelen**voor **SQL-verificatie**.
+   - Selecteer **inschakelen** voor **SQL-verificatie**.
 
      > [!Note]  
      > Wanneer u SQL-verificatie inschakelt, moet deze automatisch worden ingevuld met de ' SQLAdmin-informatie die u hebt geconfigureerd in de **basis beginselen**.
@@ -117,7 +117,7 @@ Controleer voordat u met deze oplossing begint of u aan de volgende vereisten vo
 
      ![SQL Server-instellingen configureren in Azure Stack hub-gebruikers Portal](media/solution-deployment-guide-hybrid/image5.png)
 
-9. Controleer bij **samen vatting**de configuratie van de virtuele machine en selecteer vervolgens **OK** om de implementatie te starten.
+9. Controleer bij **samen vatting** de configuratie van de virtuele machine en selecteer vervolgens **OK** om de implementatie te starten.
 
     ![Configuratie samenvatting in Azure Stack hub-gebruikers Portal](media/solution-deployment-guide-hybrid/image6.png)
 
@@ -139,7 +139,7 @@ De Azure App Service vereenvoudigt het uitvoeren en beheren van een web-app. Omd
 
 De App Service op Azure Stack hub moet routeerbaar zijn van het open bare Internet om gebruikers toegang te geven tot uw app. Als uw Azure Stack hub toegankelijk is via internet, noteert u het open bare IP-adres of de URL voor de web-app Azure Stack hub.
 
-Als u een ASDK gebruikt, kunt u [een statische NAT-toewijzing configureren](/azure-stack/operator/azure-stack-create-vpn-connection-one-node.md#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) om app service buiten de virtuele omgeving zichtbaar te maken.
+Als u een ASDK gebruikt, kunt u [een statische NAT-toewijzing configureren](/azure-stack/operator/azure-stack-create-vpn-connection-one-node#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) om app service buiten de virtuele omgeving zichtbaar te maken.
 
 ### <a name="connect-a-web-app-in-azure-to-a-hybrid-network"></a>Een web-app in azure verbinden met een hybride netwerk
 
@@ -153,7 +153,7 @@ Als u de verbinding tussen de Webfront-end in Azure en de SQL Server-data base i
 
 De virtuele netwerk gateway aan de Azure-kant van het hybride netwerk moet punt-naar-site-verbindingen toestaan om te integreren met Azure App Service.
 
-1. Ga in het Azure Portal naar de pagina virtuele netwerk gateway. Onder **instellingen**selecteert u **punt-naar-site-configuratie**.
+1. Ga in het Azure Portal naar de pagina virtuele netwerk gateway. Onder **instellingen** selecteert u **punt-naar-site-configuratie**.
 
     ![Punt-naar-site optie in azure Virtual Network-gateway](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -166,7 +166,7 @@ De virtuele netwerk gateway aan de Azure-kant van het hybride netwerk moet punt-
    > [!Note]  
    > Zorg ervoor dat het bereik dat u opgeeft, niet overlapt met een van de adresbereiken die al worden gebruikt door subnetten in de globale onderdelen van Azure of Azure Stack hub van het hybride netwerk.
 
-   Schakel onder **Tunnel Type**het selectie vakje **IKEv2 VPN**uit. Selecteer **Opslaan** om het configureren van punt-naar-site te volt ooien.
+   Schakel onder **Tunnel Type** het selectie vakje **IKEv2 VPN** uit. Selecteer **Opslaan** om het configureren van punt-naar-site te volt ooien.
 
    ![Punt-naar-site-instellingen in virtuele Azure-netwerk gateway](media/solution-deployment-guide-hybrid/image10.png)
 
@@ -174,7 +174,7 @@ De virtuele netwerk gateway aan de Azure-kant van het hybride netwerk moet punt-
 
 1. Als u de app wilt verbinden met Azure VNet, volgt u de instructies in de [Gateway vereiste VNet-integratie](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
 
-2. Ga naar **instellingen** voor het app service plan dat als host fungeert voor de web-app. Selecteer in **instellingen**de optie **netwerken**.
+2. Ga naar **instellingen** voor het app service plan dat als host fungeert voor de web-app. Selecteer in **instellingen** de optie **netwerken**.
 
     ![Netwerken configureren voor het App Service-abonnement](media/solution-deployment-guide-hybrid/image11.png)
 
@@ -182,7 +182,7 @@ De virtuele netwerk gateway aan de Azure-kant van het hybride netwerk moet punt-
 
     ![VNET-integratie voor het App Service plan beheren](media/solution-deployment-guide-hybrid/image12.png)
 
-4. Selecteer het VNET dat u wilt configureren. Voer onder **IP-adressen GEROUTEERD naar VNET**het IP-adres bereik in voor de Azure VNET, het Azure stack hub VNET en de punt-naar-site-adres ruimten. Selecteer **Opslaan** om deze instellingen te valideren en op te slaan.
+4. Selecteer het VNET dat u wilt configureren. Voer onder **IP-adressen GEROUTEERD naar VNET** het IP-adres bereik in voor de Azure VNET, het Azure stack hub VNET en de punt-naar-site-adres ruimten. Selecteer **Opslaan** om deze instellingen te valideren en op te slaan.
 
     ![IP-adresbereiken voor route ring in Virtual Network integratie](media/solution-deployment-guide-hybrid/image13.png)
 
@@ -196,7 +196,7 @@ De lokale netwerk gateway in het virtuele netwerk Azure Stack hub moet worden ge
 
     ![De optie gateway configuratie in de lokale netwerk gateway van Azure Stack hub](media/solution-deployment-guide-hybrid/image14.png)
 
-2. Voer in **adres ruimte**het punt-naar-site-adres bereik in voor de gateway van het virtuele netwerk in Azure.
+2. Voer in **adres ruimte** het punt-naar-site-adres bereik in voor de gateway van het virtuele netwerk in Azure.
 
     ![Punt-naar-site-adres ruimte in de lokale netwerk gateway van Azure Stack hub](media/solution-deployment-guide-hybrid/image15.png)
 
@@ -212,9 +212,9 @@ In deze zelf studie wordt gebruikgemaakt van Azure DNS om de DNS te beheren, omd
 
 Omdat Traffic Manager afhankelijk is van DNS-CNAME, is er een subdomein nodig om verkeer naar eind punten goed te routeren. Zie voor meer informatie over DNS-records en domein toewijzing [domeinen toewijzen met Traffic Manager](/azure/app-service/web-sites-traffic-manager-custom-domain-name).
 
-Voor het Azure-eind punt maakt u een subdomein waarmee gebruikers toegang kunnen krijgen tot uw web-app. Voor deze zelf studie kunt u **app.Northwind.com**gebruiken, maar u moet deze waarde aanpassen op basis van uw eigen domein.
+Voor het Azure-eind punt maakt u een subdomein waarmee gebruikers toegang kunnen krijgen tot uw web-app. Voor deze zelf studie kunt u **app.Northwind.com** gebruiken, maar u moet deze waarde aanpassen op basis van uw eigen domein.
 
-U moet ook een subdomein met een record maken voor het eind punt van de Azure Stack hub. U kunt **azurestack.Northwind.com**gebruiken.
+U moet ook een subdomein met een record maken voor het eind punt van de Azure Stack hub. U kunt **azurestack.Northwind.com** gebruiken.
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Een aangepast domein configureren in azure
 
@@ -267,7 +267,7 @@ U kunt App Service omgevings variabelen gebruiken om een andere connection strin
 
 1. Open de app in Visual Studio.
 
-2. Open Startup.cs en zoek het volgende code blok:
+2. Open Start. cs en zoek het volgende code blok:
 
     ```C#
     services.AddDbContext<MyDatabaseContext>(options =>
@@ -308,28 +308,28 @@ Wanneer u uw web-app in een App Service omgeving maakt, begint deze met één ex
 
     ![Automatisch schalen inschakelen in Azure App Service](media/solution-deployment-guide-hybrid/image17.png)
 
-3. Voer een naam in voor de **instellings naam voor automatisch schalen**. Selecteer **schalen op basis van een metriek**voor de **standaard** regel voor automatisch schalen. Stel de **limieten** voor de instanties in op **minimum: 1**, **maximum: 10**en **standaard: 1**.
+3. Voer een naam in voor de **instellings naam voor automatisch schalen**. Selecteer **schalen op basis van een metriek** voor de **standaard** regel voor automatisch schalen. Stel de **limieten** voor de instanties in op **minimum: 1**, **maximum: 10** en **standaard: 1**.
 
     ![Automatisch schalen configureren in Azure App Service](media/solution-deployment-guide-hybrid/image18.png)
 
 4. Selecteer **+ een regel toevoegen**.
 
-5. Selecteer **huidige resource**in **metrische bron**. Gebruik de volgende criteria en acties voor de regel.
+5. Selecteer **huidige resource** in **metrische bron**. Gebruik de volgende criteria en acties voor de regel.
 
 #### <a name="criteria"></a>Criteria
 
 1. Onder **tijd aggregatie** selecteert u **gemiddelde**.
 
-2. Selecteer onder **metrische naam**de optie **CPU-percentage**.
+2. Selecteer onder **metrische naam** de optie **CPU-percentage**.
 
-3. Onder **operator**selecteert u **groter dan**.
+3. Onder **operator** selecteert u **groter dan**.
 
    - Stel de **drempel waarde** in op **50**.
    - Stel de **duur** in op **10**.
 
 #### <a name="action"></a>Bewerking
 
-1. Selecteer onder **bewerking**de optie **aantal verhogen per**.
+1. Selecteer onder **bewerking** de optie **aantal verhogen per**.
 
 2. Stel het **aantal exemplaren** in op **2**.
 
@@ -354,16 +354,16 @@ Wanneer het verkeer afneemt, kan de Azure-web-app automatisch het aantal actieve
 
 1. Onder **tijd aggregatie** selecteert u **gemiddelde**.
 
-2. Selecteer onder **metrische naam**de optie **CPU-percentage**.
+2. Selecteer onder **metrische naam** de optie **CPU-percentage**.
 
-3. Selecteer onder **operator**de optie **kleiner dan**.
+3. Selecteer onder **operator** de optie **kleiner dan**.
 
    - Stel de **drempel waarde** in op **30**.
    - Stel de **duur** in op **10**.
 
 #### <a name="action"></a>Bewerking
 
-1. Selecteer onder **bewerking**de optie **aantal verlagen door**.
+1. Selecteer onder **bewerking** de optie **aantal verlagen door**.
 
    - Stel het **aantal exemplaren** in op **1**.
    - Stel de **afkoelen** in op **5**.
@@ -380,10 +380,10 @@ Maak een Traffic Manager profiel met behulp van de Azure Portal en configureer e
 2. Selecteer **Netwerken**.
 3. Selecteer **Traffic Manager profiel** en configureer de volgende instellingen:
 
-   - Voer bij **naam**een naam in voor uw profiel. Deze naam **moet** uniek zijn in de zone trafficmanager.net en wordt gebruikt voor het maken van een nieuwe DNS-naam (bijvoorbeeld northwindstore.trafficmanager.net).
-   - Selecteer voor **routerings methode**de **gewogen**.
-   - Selecteer bij **abonnement**het abonnement waarin u dit profiel wilt maken.
-   - Maak in **resource groep**een nieuwe resource groep voor dit profiel.
+   - Voer bij **naam** een naam in voor uw profiel. Deze naam **moet** uniek zijn in de zone trafficmanager.net en wordt gebruikt voor het maken van een nieuwe DNS-naam (bijvoorbeeld northwindstore.trafficmanager.net).
+   - Selecteer voor **routerings methode** de **gewogen**.
+   - Selecteer bij **abonnement** het abonnement waarin u dit profiel wilt maken.
+   - Maak in **resource groep** een nieuwe resource groep voor dit profiel.
    - In **Locatie van de resourcegroep** selecteert u de locatie van de resourcegroep. Deze instelling verwijst naar de locatie van de resource groep en heeft geen invloed op het Traffic Manager profiel dat wereld wijd wordt geïmplementeerd.
 
 4. Selecteer **Maken**.
@@ -396,15 +396,15 @@ Maak een Traffic Manager profiel met behulp van de Azure Portal en configureer e
 
 1. Zoek het Traffic Manager profiel dat u hebt gemaakt. Als u naar de resource groep voor het profiel navigeert, selecteert u het profiel.
 
-2. Selecteer in **Traffic Manager profiel**onder **instellingen**de optie **eind punten**.
+2. Selecteer in **Traffic Manager profiel** onder **instellingen** de optie **eind punten**.
 
 3. Selecteer **Toevoegen**.
 
-4. Gebruik in **eind punt toevoegen**de volgende instellingen voor Azure stack hub:
+4. Gebruik in **eind punt toevoegen** de volgende instellingen voor Azure stack hub:
 
    - Selecteer bij **type** **externe eind punt**.
    - Voer een **naam** in voor het eind punt.
-   - Voor **Fully Qualified Domain Name (FQDN) of IP**voert u de externe URL in voor uw Azure stack hub-web-app.
+   - Voor **Fully Qualified Domain Name (FQDN) of IP** voert u de externe URL in voor uw Azure stack hub-web-app.
    - Voor **gewicht**, behoud de standaard waarde, **1**. Dit gewicht resulteert in al het verkeer naar dit eind punt als dit in orde is.
    - Schakel **toevoegen als uitgeschakeld** laten uit.
 
@@ -412,21 +412,21 @@ Maak een Traffic Manager profiel met behulp van de Azure Portal en configureer e
 
 U configureert nu het Azure-eind punt.
 
-1. Selecteer **eind punten**op **Traffic Manager profiel**.
+1. Selecteer **eind punten** op **Traffic Manager profiel**.
 2. Selecteer **+Toevoegen**.
-3. Gebruik op **eind punt toevoegen**de volgende instellingen voor Azure:
+3. Gebruik op **eind punt toevoegen** de volgende instellingen voor Azure:
 
    - Selecteer voor **type** **Azure-eind punt**.
    - Voer een **naam** in voor het eind punt.
-   - Selecteer **app service**bij **doel resource type**.
-   - Selecteer bij **doel resource**een **app service kiezen** om een lijst van web apps in hetzelfde abonnement weer te geven.
+   - Selecteer **app service** bij **doel resource type**.
+   - Selecteer bij **doel resource** een **app service kiezen** om een lijst van web apps in hetzelfde abonnement weer te geven.
    - Kies in **Resource** de app-service die u als eerste eindpunt wilt toevoegen.
    - Selecteer voor **gewicht** **2**. Deze instelling resulteert in al het verkeer naar dit eind punt als het primaire eind punt een slechte status heeft of als u een regel/waarschuwing hebt die verkeer omleidt wanneer het wordt geactiveerd.
    - Schakel **toevoegen als uitgeschakeld** laten uit.
 
 4. Selecteer **OK** om het Azure-eind punt op te slaan.
 
-Nadat beide eind punten zijn geconfigureerd, worden ze weer gegeven in **Traffic Manager profiel** wanneer u **eind punten**selecteert. In het voor beeld in de volgende scherm opname ziet u twee eind punten, met status-en configuratie gegevens voor elk van deze.
+Nadat beide eind punten zijn geconfigureerd, worden ze weer gegeven in **Traffic Manager profiel** wanneer u **eind punten** selecteert. In het voor beeld in de volgende scherm opname ziet u twee eind punten, met status-en configuratie gegevens voor elk van deze.
 
 ![Eind punten in Traffic Manager profiel](media/solution-deployment-guide-hybrid/image20.png)
 
@@ -438,7 +438,7 @@ U gebruikt Azure-toepassing Insights-metrische gegevens om waarschuwingen te mak
 
 ### <a name="create-an-alert-from-metrics"></a>Een waarschuwing maken vanuit metrische gegevens
 
-In de Azure Portal gaat u naar de resource groep voor deze zelf studie en selecteert u de Application Insights instantie om **Application Insights**te openen.
+In de Azure Portal gaat u naar de resource groep voor deze zelf studie en selecteert u de Application Insights instantie om **Application Insights** te openen.
 
 ![Application Insights](media/solution-deployment-guide-hybrid/image21.png)
 
@@ -446,45 +446,45 @@ U gebruikt deze weer gave om een uitschaal waarschuwing te maken en een waarschu
 
 ### <a name="create-the-scale-out-alert"></a>De uitschaal waarschuwing maken
 
-1. Onder **configureren**selecteert u **waarschuwingen (klassiek)**.
+1. Onder **configureren** selecteert u **waarschuwingen (klassiek)**.
 2. Selecteer **metrische waarschuwing toevoegen (klassiek)**.
-3. Configureer in **regel toevoegen**de volgende instellingen:
+3. Configureer in **regel toevoegen** de volgende instellingen:
 
    - Voer bij **naam** **burst in azure Cloud in**.
    - Een **Beschrijving** is optioneel.
-   - Onder **bron**  >  **waarschuwing op**selecteert u **metrische gegevens**.
-   - Onder **criteria**selecteert u uw abonnement, de resource groep voor uw Traffic Manager profiel en de naam van het Traffic Manager profiel voor de resource.
+   - Onder **bron**  >  **waarschuwing op** selecteert u **metrische gegevens**.
+   - Onder **criteria** selecteert u uw abonnement, de resource groep voor uw Traffic Manager profiel en de naam van het Traffic Manager profiel voor de resource.
 
 4. Selecteer voor **metrische gegevens** **aanvraag frequentie**.
-5. Selecteer **Condition**voor voor waarde **groter dan**.
-6. Voer voor **drempel waarde** **2**in.
-7. Voor **periode**selecteert u **de afgelopen 5 minuten**.
+5. Selecteer voor voor waarde **groter dan**.
+6. Voer voor **drempel waarde** **2** in.
+7. Voor **periode** selecteert u **de afgelopen 5 minuten**.
 8. Onder **melding via**:
    - Schakel het selectie vakje in voor **e-mail eigenaren, mede werkers en lezers**.
    - Voer uw e-mail adres in voor **extra beheerders-e-mail (s)**.
 
-9. Selecteer **Opslaan**op de menu balk.
+9. Selecteer **Opslaan** op de menu balk.
 
 ### <a name="create-the-scale-in-alert"></a>De waarschuwing voor de schaal van maken
 
-1. Onder **configureren**selecteert u **waarschuwingen (klassiek)**.
+1. Onder **configureren** selecteert u **waarschuwingen (klassiek)**.
 2. Selecteer **metrische waarschuwing toevoegen (klassiek)**.
-3. Configureer in **regel toevoegen**de volgende instellingen:
+3. Configureer in **regel toevoegen** de volgende instellingen:
 
    - Voer bij **naam** **een inschaal in azure stack hub in**.
    - Een **Beschrijving** is optioneel.
-   - Onder **bron**  >  **waarschuwing op**selecteert u **metrische gegevens**.
-   - Onder **criteria**selecteert u uw abonnement, de resource groep voor uw Traffic Manager profiel en de naam van het Traffic Manager profiel voor de resource.
+   - Onder **bron**  >  **waarschuwing op** selecteert u **metrische gegevens**.
+   - Onder **criteria** selecteert u uw abonnement, de resource groep voor uw Traffic Manager profiel en de naam van het Traffic Manager profiel voor de resource.
 
 4. Selecteer voor **metrische gegevens** **aanvraag frequentie**.
-5. Selecteer **Condition**voor voor waarde **kleiner dan**.
-6. Voer voor **drempel waarde** **2**in.
-7. Voor **periode**selecteert u **de afgelopen 5 minuten**.
+5. Selecteer voor voor waarde **kleiner dan**.
+6. Voer voor **drempel waarde** **2** in.
+7. Voor **periode** selecteert u **de afgelopen 5 minuten**.
 8. Onder **melding via**:
    - Schakel het selectie vakje in voor **e-mail eigenaren, mede werkers en lezers**.
    - Voer uw e-mail adres in voor **extra beheerders-e-mail (s)**.
 
-9. Selecteer **Opslaan**op de menu balk.
+9. Selecteer **Opslaan** op de menu balk.
 
 De volgende scherm afbeelding toont de waarschuwingen voor uitschalen en schalen.
 
@@ -504,12 +504,12 @@ Wanneer uw website de drempels bereikt die u configureert, ontvangt u een waarsc
 
 2. Selecteer **eind punten**.
 3. Selecteer het **Azure-eind punt**.
-4. Selecteer onder **status**de optie **ingeschakeld**en selecteer vervolgens **Opslaan**.
+4. Selecteer onder **status** de optie **ingeschakeld** en selecteer vervolgens **Opslaan**.
 
     ![Azure-eind punt in Azure Portal inschakelen](media/solution-deployment-guide-hybrid/image23.png)
 
 5. Selecteer op **eind punten** voor het profiel van de Traffic Manager **externe eind punt**.
-6. Selecteer onder **status**de optie **uitgeschakeld**en selecteer vervolgens **Opslaan**.
+6. Selecteer onder **status** de optie **uitgeschakeld** en selecteer vervolgens **Opslaan**.
 
     ![Azure Stack hub-eind punt in Azure Portal uitschakelen](media/solution-deployment-guide-hybrid/image24.png)
 

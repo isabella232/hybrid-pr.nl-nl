@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: 9fa2c351d2c13d85fe1adb17a35e165de96ea2a2
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886829"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895428"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Direct verkeer met een geografisch gedistribueerde app met behulp van Azure en Azure Stack hub
 
@@ -56,12 +56,12 @@ Voordat u een gedistribueerde app-footprint maakt, is het handig om de volgende 
 
 - **Strategie voor het schalen van de app-footprint:** Bepaal of het gebruik van de app wordt gedistribueerd over meerdere App Service omgevingen in één regio, meerdere regio's of een combi natie van beide benaderingen. De beslissing moet worden gebaseerd op de verwachtingen van waar klant verkeer van oorsprong is en hoe goed de rest van de ondersteunende back-end-infra structuur van een app kan worden geschaald. Een app kan bijvoorbeeld met een staatloze app van 100% worden geschaald met behulp van een combi natie van meerdere App Service omgevingen per Azure-regio, vermenigvuldigd met App Service omgevingen die zijn geïmplementeerd in meerdere Azure-regio's. Met 15 + wereld wijde Azure-regio's die beschikbaar zijn voor keuze, kunnen klanten echt een hele wereld voor Hyper-Scale-apps bouwen. Voor de voor beeld-app die hier wordt gebruikt, zijn er drie App Service omgevingen gemaakt in één Azure-regio (Zuid-Centraal).
 
-- **Naam Conventie voor de app service omgevingen:** Elke App Service omgeving moet een unieke naam hebben. Naast een of twee App Service omgevingen is het handig om een naam Conventie te hebben om elke App Service omgeving te identificeren. Voor de voor beeld-app die hier wordt gebruikt, is een eenvoudige naam conventie gebruikt. De namen van de drie App Service omgevingen zijn *fe1ase*, *fe2ase*en *fe3ase*.
+- **Naam Conventie voor de app service omgevingen:** Elke App Service omgeving moet een unieke naam hebben. Naast een of twee App Service omgevingen is het handig om een naam Conventie te hebben om elke App Service omgeving te identificeren. Voor de voor beeld-app die hier wordt gebruikt, is een eenvoudige naam conventie gebruikt. De namen van de drie App Service omgevingen zijn *fe1ase*, *fe2ase* en *fe3ase*.
 
-- **Naam Conventie voor de apps:** Omdat er meerdere exemplaren van de app worden geïmplementeerd, is een naam vereist voor elk exemplaar van de geïmplementeerde app. Met App Service Environment voor Power apps kan dezelfde app-naam worden gebruikt in meerdere omgevingen. Omdat elke App Service omgeving een uniek domein achtervoegsel heeft, kunnen ontwikkel aars ervoor kiezen om de exacte dezelfde app-naam in elke omgeving te gebruiken. Een ontwikkelaar kan bijvoorbeeld apps als volgt hebben met de naam: *MyApp.foo1.p.azurewebsites.net*, *MyApp.foo2.p.azurewebsites.net*, *MyApp.foo3.p.azurewebsites.net*, enzovoort. Voor de app die hier wordt gebruikt, heeft elk exemplaar van de app een unieke naam. De namen van de app-exemplaren die worden gebruikt, zijn *webfrontend1*, *webfrontend2*en *webfrontend3*.
+- **Naam Conventie voor de apps:** Omdat er meerdere exemplaren van de app worden geïmplementeerd, is een naam vereist voor elk exemplaar van de geïmplementeerde app. Met App Service Environment voor Power apps kan dezelfde app-naam worden gebruikt in meerdere omgevingen. Omdat elke App Service omgeving een uniek domein achtervoegsel heeft, kunnen ontwikkel aars ervoor kiezen om de exacte dezelfde app-naam in elke omgeving te gebruiken. Een ontwikkelaar kan bijvoorbeeld apps als volgt hebben met de naam: *MyApp.foo1.p.azurewebsites.net*, *MyApp.foo2.p.azurewebsites.net*, *MyApp.foo3.p.azurewebsites.net*, enzovoort. Voor de app die hier wordt gebruikt, heeft elk exemplaar van de app een unieke naam. De namen van de app-exemplaren die worden gebruikt, zijn *webfrontend1*, *webfrontend2* en *webfrontend3*.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagram hybride pijlers](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack hub is een uitbrei ding van Azure. Azure Stack hub biedt de flexibiliteit en innovatie van Cloud Computing naar uw on-premises omgeving, waardoor u de enige hybride Cloud kunt maken en implementeren.  
 > 
 > In het artikel [hybride overwegingen](overview-app-design-considerations.md) voor het ontwerpen van een app worden de pijlers van de software kwaliteit (plaatsing, schaal baarheid, Beschik baarheid, tolerantie, beheersbaarheid en beveiliging) beoordeeld voor het ontwerpen, implementeren en beheren van hybride apps. De ontwerp overwegingen helpen bij het optimaliseren van het ontwerp van hybride apps, zodat de uitdagingen in productie omgevingen worden geminimaliseerd.
@@ -97,7 +97,7 @@ Werk het DNS-zone bestand voor het domein bij. Azure AD kan vervolgens het eigen
 Stel hybride continue integratie/continue levering (CI/CD) in om de web-app te implementeren in Azure en Azure Stack hub, en automatisch push wijzigingen door te voeren naar beide Clouds.
 
 > [!Note]  
-> Azure Stack hub met de juiste installatie kopieën die zijn syndicated om te worden uitgevoerd (Windows Server en SQL) en App Service implementatie is vereist. Zie [vereisten voor het implementeren van app service op Azure stack hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md)voor meer informatie.
+> Azure Stack hub met de juiste installatie kopieën die zijn syndicated om te worden uitgevoerd (Windows Server en SQL) en App Service implementatie is vereist. Zie [vereisten voor het implementeren van app service op Azure stack hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started)voor meer informatie.
 
 #### <a name="add-code-to-azure-repos"></a>Code toevoegen aan Azure opslag plaatsen
 
@@ -149,7 +149,7 @@ Azure DevOps Services voorziet in een zeer Configureer bare en beheersbare pijp 
 
    ![Azure App Service implementatie sjabloon Toep assen in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image6.png)
 
-3. Voeg onder **artefact toevoegen**het artefact toe voor de Azure Cloud build-app.
+3. Voeg onder **artefact toevoegen** het artefact toe voor de Azure Cloud build-app.
 
    ![Artefact toevoegen aan Azure Cloud build in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image7.png)
 
@@ -161,7 +161,7 @@ Azure DevOps Services voorziet in een zeer Configureer bare en beheersbare pijp 
 
       ![Selecteer Azure-abonnement voor Azure Cloud-eind punt in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image9.png)
 
-6. Stel onder **app service name**de vereiste Azure app service-naam in.
+6. Stel onder **app service name** de vereiste Azure app service-naam in.
 
       ![Azure app service-naam instellen in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image10.png)
 
@@ -169,11 +169,11 @@ Azure DevOps Services voorziet in een zeer Configureer bare en beheersbare pijp 
 
       ![Agent wachtrij instellen voor gehoste Azure-cloud omgeving in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image11.png)
 
-8. Selecteer in het menu implementeren Azure App Service het geldige **pakket of** de juiste map voor de omgeving. Selecteer **OK** om **de maplocatie te**selecteren.
+8. Selecteer in het menu implementeren Azure App Service het geldige **pakket of** de juiste map voor de omgeving. Selecteer **OK** om **de maplocatie te** selecteren.
   
       ![Selecteer pakket of map voor Azure App Service omgeving in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image12.png)
 
-      ![Selecteer pakket of map voor Azure App Service omgeving in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image13.png)
+      ![Dialoog venster voor het kiezen van mappen 1](media/solution-deployment-guide-geo-distributed/image13.png)
 
 9. Sla alle wijzigingen op en ga terug naar de **release pijplijn**.
 
@@ -212,9 +212,9 @@ Azure DevOps Services voorziet in een zeer Configureer bare en beheersbare pijp 
 
     ![Selecteer een map voor Azure App Service implementatie in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image22.png)
 
-    ![Selecteer een map voor Azure App Service implementatie in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image23.png)
+    ![Dialoog venster voor het kiezen van mappen 2](media/solution-deployment-guide-geo-distributed/image23.png)
 
-18. Onder op het tabblad variabele voegt u een variabele met de naam in `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` , stelt u de waarde in op **True**en bereik Azure stack hub.
+18. Onder op het tabblad variabele voegt u een variabele met de naam in `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` , stelt u de waarde in op **True** en bereik Azure stack hub.
 
     ![Een variabele toevoegen aan Azure-app-implementatie in azure DevOps Services](media/solution-deployment-guide-geo-distributed/image24.png)
 
@@ -229,7 +229,7 @@ Azure DevOps Services voorziet in een zeer Configureer bare en beheersbare pijp 
 21. Sla alle wijzigingen op.
 
 > [!Note]  
-> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
+> Sommige instellingen voor de taken zijn mogelijk automatisch gedefinieerd als [omgevings variabelen](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) bij het maken van een release definitie op basis van een sjabloon. Deze instellingen kunnen niet worden gewijzigd in de taak instellingen. in plaats daarvan moet het bovenliggende omgevings item worden geselecteerd om deze instellingen te bewerken.
 
 ## <a name="part-2-update-web-app-options"></a>Deel 2: opties voor Web-Apps bijwerken
 
@@ -267,7 +267,7 @@ Werk het DNS-zone bestand voor het domein bij. Azure AD controleert het eigendom
 Als u bijvoorbeeld DNS-vermeldingen wilt toevoegen voor northwindcloud.com en www \. northwindcloud.com, configureert u DNS-instellingen voor het hoofd domein northwindcloud.com.
 
 > [!Note]  
-> U kunt een domein naam aanschaffen met behulp van de [Azure Portal](/azure/app-service/manage-custom-dns-buy-domain). Om een aangepaste DNS-naam toe te wijzen aan een web-app, moet het [App Service-plan](https://azure.microsoft.com/pricing/details/app-service/) van de web-app een betaalde categorie zijn (**Shared**, **Basic**, **Standard** of ** Premium**).
+> U kunt een domein naam aanschaffen met behulp van de [Azure Portal](/azure/app-service/manage-custom-dns-buy-domain). Om een aangepaste DNS-naam toe te wijzen aan een web-app, moet het [App Service-plan](https://azure.microsoft.com/pricing/details/app-service/) van de web-app een betaalde categorie zijn (**Shared**, **Basic**, **Standard** of **Premium**).
 
 ### <a name="create-and-map-cname-and-a-records"></a>CNAME-en A-records maken en toewijzen
 
@@ -280,7 +280,7 @@ Als u bijvoorbeeld DNS-vermeldingen wilt toevoegen voor northwindcloud.com en ww
 
 2. Ga naar de pagina voor het beheren van DNS-records. Elke domein provider heeft zijn eigen DNS-record interface. Doorgaans heeft het sitegedeelte waar u moet zijn, een naam als **Domain Name**, **DNS** of **Name Server Management**.
 
-De pagina DNS-records kan worden weer gegeven in **mijn domeinen**. Zoek de koppeling met de naam **zone bestand**, **DNS-records**of **Geavanceerde configuratie**.
+De pagina DNS-records kan worden weer gegeven in **mijn domeinen**. Zoek de koppeling met de naam **zone bestand**, **DNS-records** of **Geavanceerde configuratie**.
 
 In de schermafbeelding hieronder wordt een voorbeeld van een pagina met DNS-records weergegeven:
 
@@ -382,13 +382,13 @@ Als u een certificaat in App Service wilt gebruiken, moet het certificaat aan de
 
 #### <a name="prepare-the-web-app"></a>De web-app voorbereiden
 
-Als u een aangepast SSL-certificaat aan de Web-App wilt koppelen, moet het [app service plan](https://azure.microsoft.com/pricing/details/app-service/) zich in de laag **Basic**, **Standard**of **Premium** bestaan.
+Als u een aangepast SSL-certificaat aan de Web-App wilt koppelen, moet het [app service plan](https://azure.microsoft.com/pricing/details/app-service/) zich in de laag **Basic**, **Standard** of **Premium** bestaan.
 
 #### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
 1. Open de [Azure Portal](https://portal.azure.com/) en ga naar de web-app.
 
-2. Selecteer in het menu links **app Services**en selecteer vervolgens de naam van de web-app.
+2. Selecteer in het menu links **app Services** en selecteer vervolgens de naam van de web-app.
 
 ![Web-app in Azure Portal selecteren](media/solution-deployment-guide-geo-distributed/image33.png)
 
@@ -471,9 +471,9 @@ Wanneer IIS of **Certreq.exe** wordt gebruikt om de certificaat aanvraag te gene
 
 2. Selecteer **certificaat uploaden**.
 
-3. Selecteer in **PFX-certificaat bestand**de optie pfx-bestand.
+3. Selecteer in **PFX-certificaat bestand** de optie pfx-bestand.
 
-4. In **certificaat wachtwoord**typt u het wacht woord dat u hebt gemaakt bij het exporteren van het pfx-bestand.
+4. In **certificaat wachtwoord** typt u het wacht woord dat u hebt gemaakt bij het exporteren van het pfx-bestand.
 
 5. Selecteer **Uploaden**.
 
@@ -545,7 +545,7 @@ De app staat standaard [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
 1. Selecteer op de pagina Web-app in het linkernavigatievenster de optie **SSL-instellingen**.
 
-2. Selecteer in **TLS-versie**de minimale TLS-versie.
+2. Selecteer in **TLS-versie** de minimale TLS-versie.
 
     ![TLS 1.1 of 1.2 afdwingen](media/solution-deployment-guide-geo-distributed/image44.png)
 
@@ -555,11 +555,11 @@ De app staat standaard [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
 2. Vul het volgende in bij **Traffic Manager-profiel maken**:
 
-    1. Geef bij **naam**een naam op voor het profiel. Deze naam moet uniek zijn binnen de zone verkeer manager.net en resulteert in de DNS-naam trafficmanager.net, die wordt gebruikt voor toegang tot het profiel van de Traffic Manager.
+    1. Geef bij **naam** een naam op voor het profiel. Deze naam moet uniek zijn binnen de zone verkeer manager.net en resulteert in de DNS-naam trafficmanager.net, die wordt gebruikt voor toegang tot het profiel van de Traffic Manager.
 
-    2. Selecteer bij **routerings methode**de **geografische routerings methode**.
+    2. Selecteer bij **routerings methode** de **geografische routerings methode**.
 
-    3. Selecteer bij **abonnement**het abonnement waaronder u dit profiel wilt maken.
+    3. Selecteer bij **abonnement** het abonnement waaronder u dit profiel wilt maken.
 
     4. In **Resourcegroep** maakt u een nieuwe resourcegroep om dit profiel voor te maken.
 
@@ -575,7 +575,7 @@ De app staat standaard [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
 1. Zoek in de zoek balk van de portal naar de naam van het **Traffic Manager profiel** dat u in de voor gaande sectie hebt gemaakt en selecteer het Traffic Manager-profiel in de weer gegeven resultaten.
 
-2. Selecteer in **Traffic Manager profiel**in de sectie **instellingen** de optie **eind punten**.
+2. Selecteer in **Traffic Manager profiel** in de sectie **instellingen** de optie **eind punten**.
 
 3. Selecteer **Toevoegen**.
 
@@ -601,9 +601,9 @@ De app staat standaard [TLS](https://wikipedia.org/wiki/Transport_Layer_Security
 
     2. Geef een **naam** op voor het eind punt.
 
-    3. Selecteer **app service**bij **doel resource type**.
+    3. Selecteer **app service** bij **doel resource type**.
 
-    4. Selecteer bij **doel resource** **een app service kiezen** om de vermelding van de web apps onder hetzelfde abonnement weer te geven. Kies in **resource**de app service die als eerste eind punt wordt gebruikt.
+    4. Selecteer bij **doel resource** **een app service kiezen** om de vermelding van de web apps onder hetzelfde abonnement weer te geven. Kies in **resource** de app service die als eerste eind punt wordt gebruikt.
 
 13. Selecteer onder geo-toewijzing een regio/continent waar de resource zich bevindt. Bijvoorbeeld **Noord-Amerika/Centraal-Amerika/Caribisch gebied.**
 
