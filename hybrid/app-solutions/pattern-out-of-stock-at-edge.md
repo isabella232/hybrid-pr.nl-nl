@@ -1,43 +1,43 @@
 ---
-title: Geen voorraad detectie met Azure en Azure Stack Edge
-description: Meer informatie over hoe u Azure en Azure Stack Edge-Services kunt gebruiken om de detectie van de voor Raad uit te voeren.
+title: Niet-voorraaddetectie met Behulp van Azure en Azure Stack Edge
+description: Meer informatie over het gebruik van Azure en Azure Stack Edge om buiten voorraaddetectie te implementeren.
 author: BryanLa
 ms.topic: article
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 865f63bc4234e50ed169aa29cefdb1886750594c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: b25a6391c4e64fa7018031bac4fb7d098c56b529
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910451"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343872"
 ---
-# <a name="out-of-stock-detection-at-the-edge-pattern"></a>Geen voorraad detectie op het rand patroon
+# <a name="out-of-stock-detection-at-the-edge-pattern"></a>Niet-voorraaddetectie aan de randpatroon
 
-Dit patroon illustreert hoe u kunt bepalen of rekken met een Azure Stack rand of Azure IoT Edge apparaat en netwerk camera's geen voorraad items bevatten.
+Dit patroon laat zien hoe u kunt bepalen of schappen geen voorraad meer hebben met behulp van een Azure Stack Edge of Azure IoT Edge apparaat- en netwerkcamera's.
 
 ## <a name="context-and-problem"></a>Context en probleem
 
-De verkoop van fysieke winkels gaat verloren omdat wanneer klanten een item zoeken, het niet aanwezig is op het schap. Het item kan echter aanwezig zijn in de back-up van de Store en niet opnieuw worden opgeslagen. Winkels willen hun mede werkers efficiënter gebruiken en automatisch op de hoogte worden gesteld wanneer items opnieuw moeten worden opgeslagen.
+Fysieke winkels verliezen verkoop, omdat wanneer klanten naar een artikel zoeken, het niet op de schappen aanwezig is. Het item kan zich echter achter in de winkel hebben bewaard en niet opnieuw zijn aangevuld. Winkels willen hun personeel efficiënter gebruiken en automatisch een melding ontvangen wanneer items moeten worden aangevuld.
 
 ## <a name="solution"></a>Oplossing
 
-In het voor beeld van de oplossing wordt een edge-apparaat gebruikt, zoals een Azure Stack rand in elke Store, waarmee gegevens efficiënt worden verwerkt van camera's in de Store. Met dit geoptimaliseerde ontwerp kunnen winkels alleen relevante gebeurtenissen en installatie kopieën verzenden naar de Cloud. Het ontwerp bespaart band breedte, opslag ruimte en zorgt voor de privacy van klanten. Als frames van elke camera worden gelezen, wordt de installatie kopie door een ML-model verwerkt en worden er geen voorraad gebieden weer gegeven. De afbeeldings-en buiten-voorraad gebieden worden weer gegeven op een lokale web-app. Deze gegevens kunnen naar een time series Insight-omgeving worden verzonden om inzicht in Power BI weer te geven.
+In het voorbeeld van de oplossing wordt een edge-apparaat gebruikt, zoals een Azure Stack Edge in elk winkel, waarmee gegevens van camera's in de winkel efficiënt worden verwerkt. Met dit geoptimaliseerde ontwerp kunnen winkels alleen relevante gebeurtenissen en afbeeldingen naar de cloud verzenden. Het ontwerp bespaart bandbreedte, opslagruimte en garandeert de privacy van klanten. Wanneer frames van elke camera worden gelezen, verwerkt een ML-model de afbeelding en retourneert het eventuele uit voorraadgebieden. De afbeelding en buiten voorraadgebieden worden weergegeven in een lokale web-app. Deze gegevens kunnen worden verzonden naar een Time Series Insight-omgeving om inzichten in uw Power BI.
 
-![Niet-voorradige oplossings architectuur](media/pattern-out-of-stock-at-edge/solution-architecture.png)
+![Niet op voorraad bij edge-oplossingsarchitectuur](media/pattern-out-of-stock-at-edge/solution-architecture.png)
 
-Hier volgt een beschrijving van de werking van de oplossing:
+De oplossing werkt als volgende:
 
-1. Installatie kopieën worden vastgelegd van een netwerk camera over HTTP of RTSP.
-2. De grootte van de installatie kopie wordt gewijzigd en verzonden naar het stuur programma voor ingrijpen, dat communiceert met het ML-model om te bepalen of er niet-voorraad afbeeldingen zijn.
-3. Het model ML retourneert een van de voorraad gebieden.
-4. Het stuur programma voor delooiing uploadt de onbewerkte installatie kopie naar een BLOB (indien opgegeven) en verstuurt de resultaten van het model naar Azure IoT Hub en een selectie kader processor op het apparaat.
-5. De selectie kader processor voegt selectie kaders toe aan de afbeelding en slaat het pad naar de afbeelding op in een in-memory database.
-6. De web-app zoekt naar installatie kopieën en geeft deze weer in de ontvangen volg orde.
+1. Afbeeldingen worden vastgelegd vanaf een netwerkcamera via HTTP of RTSP.
+2. De afbeelding wordt van het ene naar het deferentie-stuurprogramma verzonden, dat communiceert met het ML-model om te bepalen of er geen afbeeldingen op voorraad zijn.
+3. Het ML-model retourneert alle uit voorraadgebieden.
+4. Met het deferencingst stuurprogramma wordt de onbewerkte afbeelding geüpload naar een blob (indien opgegeven) en worden de resultaten van het model naar Azure IoT Hub en een begrensvakprocessor op het apparaat verzendt.
+5. Met de begrenzendvakprocessor worden begrenzen aan de afbeelding toegevoegd en wordt het pad naar de afbeelding in een in-memory database.
+6. De web-app vraagt naar afbeeldingen en geeft deze weer in de ontvangen volgorde.
 7. Berichten van IoT Hub worden geaggregeerd in Time Series Insights.
-8. In Power BI wordt een interactief rapport weer gegeven van items die gedurende een bepaalde periode in de loop van de tijd vallen met de gegevens van Time Series Insights.
+8. Power BI geeft een interactief rapport weer van niet-voorraaditems gedurende een periode met de gegevens uit Time Series Insights.
 
 
 ## <a name="components"></a>Onderdelen
@@ -46,39 +46,39 @@ Deze oplossing maakt gebruik van de volgende onderdelen:
 
 | Laag | Onderdeel | Beschrijving |
 |----------|-----------|-------------|
-| On-premises hardware | Netwerk camera | Er is een netwerk camera vereist, met een HTTP-of RTSP-feed om de installatie kopieën op te geven. |
-| Azure | Azure IoT Hub | [Azure IOT hub](/azure/iot-hub/) verwerkt apparaat-inrichting en-berichten voor de apparaten van de rand. |
-|  | Azure Time Series Insights | [Azure time series Insights](/azure/time-series-insights/) worden de berichten van IOT hub opgeslagen voor visualisatie. |
-|  | Power BI | [Micro soft power bi](https://powerbi.microsoft.com/) voorziet in zakelijke rapporten over gebeurtenissen die zich niet in de voor Raad bevinden. Power BI biedt een gebruiks vriendelijke dash board-interface voor het weer geven van de uitvoer van Azure Stream Analytics. |
-| Azure Stack rand of<br>Azure IoT Edge apparaat | Azure IoT Edge | [Azure IOT Edge](/azure/iot-edge/) organiseert de runtime voor on-premises containers en beheert het beheer en de updates van apparaten.|
-| | Azure project brainwave | Op een Azure Stack edge-apparaat gebruikt [project brainwave](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) veld-Programmeer bare poort matrices (fpga's) om ml te versnellen.|
+| On-premises hardware | Netwerkcamera | Een netwerkcamera is vereist, met een HTTP- of RTSP-feed om de afbeeldingen voor de deferentie op te geven. |
+| Azure | Azure IoT Hub | [Azure IoT Hub](/azure/iot-hub/) verwerkt het inrichten en verzenden van berichten voor de edge-apparaten. |
+|  | Azure Time Series Insights | [Azure Time Series Insights](/azure/time-series-insights/) worden de berichten uit de IoT Hub op voor visualisatie. |
+|  | Power BI | [Microsoft Power BI](https://powerbi.microsoft.com/) bedrijfsgerichte rapporten over niet-aandelengebeurtenissen. Power BI biedt een gebruiksvriendelijke dashboardinterface voor het weergeven van de uitvoer van Azure Stream Analytics. |
+| Azure Stack Edge of<br>Azure IoT Edge apparaat | Azure IoT Edge | [Azure IoT Edge](/azure/iot-edge/) de runtime voor de on-premises containers en verwerkt apparaatbeheer en updates.|
+| | Azure-project brainwave | Op een Azure Stack Edge gebruikt [Project Brainwave](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) Field-Programmable Gate Arrays (FPGA's) om ML-deferencing te versnellen.|
 
 ## <a name="issues-and-considerations"></a>Problemen en overwegingen
 
-Houd rekening met de volgende punten wanneer u bepaalt hoe u deze oplossing implementeert:
+Houd rekening met de volgende punten bij het bepalen hoe u deze oplossing implementeert:
 
 ### <a name="scalability"></a>Schaalbaarheid
 
-De meeste machine learning modellen kunnen alleen worden uitgevoerd op een bepaald aantal frames per seconde, afhankelijk van de beschik bare hardware. Bepaal de optimale sampling frequentie van uw camera (s) om ervoor te zorgen dat er geen back-up wordt gemaakt van de ML-pijp lijn. Verschillende typen hardware verwerken verschillende aantallen camera's en frame snelheden.
+De machine learning modellen kunnen alleen worden uitgevoerd met een bepaald aantal frames per seconde, afhankelijk van de opgegeven hardware. Bepaal de optimale steekproeffrequentie van uw camera(s) om ervoor te zorgen dat er geen back-up wordt van de ML-pijplijn. Verschillende typen hardware verwerken verschillende aantallen camera's en framesnelheden.
 
 ### <a name="availability"></a>Beschikbaarheid
 
-Het is belang rijk om te bepalen wat er kan gebeuren als de verbinding met het edge-apparaat is verbroken. Houd er rekening mee dat de gegevens van het Time Series Insights en Power BI dash board verloren kunnen gaan. De voorziene voorbeeld oplossing is niet ontworpen om Maxi maal beschikbaar te zijn.
+Het is belangrijk om te overwegen wat er kan gebeuren als de connectiviteit van het edge-apparaat wordt verliest. Bedenk welke gegevens mogelijk verloren gaan in het Time Series Insights en Power BI dashboard. De opgegeven voorbeeldoplossing is niet ontworpen om zeer beschikbaar te zijn.
 
 ### <a name="manageability"></a>Beheerbaarheid
 
-Deze oplossing kan veel apparaten en locaties omvatten, wat een onhandigheid kan oplevert. Met de IoT-services van Azure kunnen nieuwe locaties en apparaten automatisch online worden gebracht en up-to-date blijven. De juiste procedures voor gegevens beheer moeten ook worden gevolgd.
+Deze oplossing kan veel apparaten en locaties overspannen, wat onprakkig kan worden. De IoT-services van Azure kunnen automatisch nieuwe locaties en apparaten online brengen en up-to-date houden. De juiste procedures voor gegevensbeheer moeten ook worden gevolgd.
 
 ### <a name="security"></a>Beveiliging
 
-Met dit patroon worden mogelijk gevoelige gegevens verwerkt. Zorg ervoor dat sleutels regel matig worden geroteerd en dat de machtigingen voor het Azure Storage account en lokale shares correct zijn ingesteld.
+Met dit patroon worden mogelijk gevoelige gegevens verwerkt. Zorg ervoor dat sleutels regelmatig worden geroteerd en dat de machtigingen voor het Azure Storage account en lokale shares correct zijn ingesteld.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor meer informatie over de onderwerpen die in dit artikel worden geïntroduceerd:
-- Er worden meerdere IoT-gerelateerde services gebruikt in dit patroon, waaronder [Azure IOT Edge](/azure/iot-edge/), [Azure IOT hub](/azure/iot-hub/)en [Azure time series Insights](/azure/time-series-insights/).
-- Voor meer informatie over micro soft project brainwave raadpleegt u [de aankondiging van de blog](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) en uitchecken [van de Azure-versnelde machine learning met project brainwave-video](https://www.youtube.com/watch?v=DJfMobMjCX0).
-- Bekijk de overwegingen voor het [ontwerpen van hybride apps](overview-app-design-considerations.md) voor meer informatie over aanbevolen procedures en voor het verkrijgen van antwoorden op eventuele aanvullende vragen.
-- Bekijk de [Azure stack-familie van producten en oplossingen](/azure-stack) voor meer informatie over de volledige Port Folio van producten en oplossingen.
+Voor meer informatie over onderwerpen die in dit artikel zijn geïntroduceerd:
+- In dit patroon worden meerdere IoT-gerelateerde services gebruikt, Azure IoT Edge [,](/azure/iot-edge/) [Azure IoT Hub](/azure/iot-hub/)en [Azure Time Series Insights.](/azure/time-series-insights/)
+- Zie voor meer informatie over [](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) Microsoft Project Brainwave de blogaankondiging en bekijk de Video over [versnelde Azure Machine Learning met Project Brainwave.](https://www.youtube.com/watch?v=DJfMobMjCX0)
+- Zie [Ontwerpoverwegingen voor hybride apps](overview-app-design-considerations.md) voor meer informatie over best practices en voor antwoorden op aanvullende vragen.
+- Zie de [Azure Stack producten en oplossingen](/azure-stack) voor meer informatie over het hele portfolio met producten en oplossingen.
 
-Wanneer u klaar bent om het voor beeld van de oplossing te testen, gaat u verder met de [gelaagde gegevens voor de implementatie handleiding voor analyse oplossingen](https://aka.ms/edgeinferencingdeploy). De implementatie handleiding bevat stapsgewijze instructies voor het implementeren en testen van de onderdelen.
+Wanneer u klaar bent om het oplossingsvoorbeeld te testen, gaat u verder met de implementatiehandleiding voor de [Edge ML-deferencingoplossing.](https://aka.ms/edgeinferencingdeploy) De implementatiehandleiding bevat stapsgewijs instructies voor het implementeren en testen van de onderdelen.
