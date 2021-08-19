@@ -295,15 +295,15 @@ additionalContent:
               text: Maximaal beschikbaar Kubernetes-cluster
         - title: Voorbeelden van app-oplossingen implementeren
           links:
-            - url: ./app-solutions/solution-deployment-guide-cross-cloud-scaling.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
               text: Schalen in de cloud
             - url: 'https://aka.ms/hybriddevopsdeploy'
               text: Hybride CI/CD in DevOps
-            - url: ./app-solutions/solution-deployment-guide-retail-footfall-detection.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
               text: Footfall-detectie (retail)
-            - url: ./app-solutions/solution-deployment-guide-geo-distributed.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
               text: Geografisch verdeelde app
-            - url: ./app-solutions/solution-deployment-guide-highly-available-kubernetes.md
+            - url: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
               text: Maximaal beschikbaar Kubernetes-cluster
     - title: Resources evalueren en leren
       items:
@@ -332,7 +332,7 @@ additionalContent:
             - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
               text: Dynamisch schalen van Azure Stack Hub naar Azure
             - url: 'https://mybuild.microsoft.com/sessions/92bd3e12-fbf4-4278-b68f-fe776b02adfa'
-              text: 'Logic Apps: de toekomst van de integratie aan en uit'
+              text: 'Logic Apps: de toekomst van integratie aan-'
             - url: 'https://mybuild.microsoft.com/sessions/76ebac39-517d-44da-a58e-df4193b5efa9'
               text: De toekomst van de ontwikkeling van moderne toepassingen met .NET
         - title: Edge

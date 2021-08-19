@@ -33,29 +33,29 @@
 - name: Implementatiegidsen voor oplossingen
   items:
     - name: Schalen door de cloud
-      href: solution-deployment-guide-cross-cloud-scaling.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling
     - name: Schalen in meerdere clouds (on-premises gegevens)
-      href: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data
     - name: Hybride CI/CD in DevOps
       href: 'https://aka.ms/hybriddevopsdeploy'
     - name: Footfall-detectie (retail)
-      href: solution-deployment-guide-retail-footfall-detection.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-retail-footfall-detection
     - name: Geografisch verdeelde app
-      href: solution-deployment-guide-geo-distributed.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed
     - name: Maximaal beschikbaar Kubernetes-cluster
-      href: solution-deployment-guide-highly-available-kubernetes.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes
     - name: Hybride connectiviteit
-      href: solution-deployment-guide-connectivity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-connectivity
     - name: Hybride identiteit
-      href: solution-deployment-guide-identity.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-identity
     - name: Hybride relay
       href: 'https://aka.ms/hybridrelaydeployment'
     - name: Gelaagde gegevens
       href: 'https://aka.ms/tiereddatadeploy'
     - name: Hoge beschikbaarheid in MongoDB
-      href: solution-deployment-guide-mongodb-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-mongodb-ha
     - name: Hoge beschikbaarheid in SQL Server 2016
-      href: solution-deployment-guide-sql-ha.md
+      href: /azure/architecture/hybrid/deployments/solution-deployment-guide-sql-ha
     - name: Out-of-stock aan de rand
       href: 'https://aka.ms/edgeinferencingdeploy'
     - name: ML-modellen trainen aan de rand
